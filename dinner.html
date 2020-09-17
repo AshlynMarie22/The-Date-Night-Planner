@@ -34,26 +34,43 @@
         <h1>Dinner Page</h1>
         <div class = "container">
           <div class = "row">
-            <div class="col-sm-6 d-flex justify-content-center">
+            <div class="col-sm-6 center">
                <!--- HARD CODED where the box with choose food catagory will go -->
                <p> choose food catagory: </p>
             </div>
-            <div class="col-sm-6 d-flex justify-content-center" id="generate-dinner-button">
+            <div class="col-sm-6" id="generate-dinner-button">
               <!--- HARD CODED where the generate dinner button will go -->
-              <button>Generate Dinner</button>
+              <button class="btn btn-secondary btn-circle btn-xl">Generate Dinner </button>
             </div>
           </div>
-          <div class = "row" id = "view-dinner-cocktail-display">
-            <!--- where VIEW YOUR DINNER MENU will be dynamically populated below this is the demo that will be deleted when js is done-->
-            <div class = "col-sm-6 d-flex justify-content-center" id="view-your-dinner-menu">
+          <div class = "row mb-10" id = "view-dinner-cocktail-display">
+            
+            <div class = "col-sm-6 flex-column center">
               <!-- dinner menu section title -->
               <h5>VIEW YOUR DINNER MENU: </h5>
-              <!-- dinner menu cards -->
+              <!-- dinner menu cards this is the demo that will be deleted when js is done-->
+              <div class="card text-center">
+                <div class="card-body">
+                  <h6>Recipie Name 1</h6>
+                  <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
+                  <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
+                </div>
+              </div>
             </div>
-            <div class = "col-sm-6 d-flex justify-content-center" id="view-cocktails">
+            <div class = "col-sm-6 flex-column center" id="view-cocktails">
               <!-- cocktail menu title -->
               <h5>VIEW COCKTAILS: </h5>
               <!-- cocktail menu card -->
+              <div class="card text-center">
+                <div class="card-body">
+                  <h6 class="card-title">Cocktail Name 1</h6>
+                  <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
+                  <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
+                </div>
+              </div>
+
             </div>
 
           </div>
