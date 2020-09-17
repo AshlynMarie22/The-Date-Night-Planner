@@ -15,25 +15,28 @@ $(document).ready(function () {
     }
     
     $.ajax(settings).done(function (response) {
-        // console.log(response.results[0]);
+        console.log(response.results[0]);
         console.log("Movie Title: " + response.results[0].title);
         console.log("IMDB Rating: " + response.results[0].imdbrating);
         console.log("Synopsis: " + response.results[0].synopsis);
 
         //Display elements to page
         //Create elements
-        var movieDiv = $("<div>");
-        var movieName = response.results[0].title
-        var movieRating = response.results[0].imdbrating
-        var movieSynopsis = response.results[0].synopsis
+        // var movieDiv = $("<div>");
+        var movieName = $("<div>");
+        var movieRating = $("<div>");
+        var movieSynopsis = $("<div>");
+        var movieImage = $("<div>");
 
         //Add content
-        movieDiv.text(movieName)
-        movieDiv.text(movieRating)
-        movieDiv.text(movieSynopsis)
+        movieName.text("Movie Title: " + response.results[0].title)
+        movieRating.text("Movie Rating: " + response.results[0].imdbrating)
+        movieSynopsis.text("Movie Synopsis: " + response.results[0].synopsis)
 
         //Display to Page
-        $("#view-your-movies").append(movieDiv);
+        $("#here").append(movieName);
+        $("#here").append(movieRating);
+        $("#here").append(movieSynopsis);
 
     });
 });
