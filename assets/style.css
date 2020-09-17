@@ -9,6 +9,9 @@ body{
         background-color: #C10059;
         color: white;
     }
+    .navbar-custom{
+        color: white;
+    }
     .navbar-brand{
         color: white;
         font-weight: bold;
@@ -16,9 +19,12 @@ body{
     .nav-link{
         color: white;
     }
-    .navbar-toggler{
-        background-color: white;
+    .navbar-toggler-icon{
+        background-color: grey;
     }
+     .navbar-toggler{
+        background-color: white;
+    } 
     /* .navbar-toggler-icon{
         background-color: white;
     } */
