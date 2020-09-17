@@ -2,6 +2,7 @@ $(document).ready(function () {
     console.log("Hello World")
 
     //Create Settings Variable to pass into Ajax Function
+    var genre = ""
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -14,6 +15,6 @@ $(document).ready(function () {
     }
     
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        console.log(response.results[0]);
     });
 });
