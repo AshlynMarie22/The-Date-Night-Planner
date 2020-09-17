@@ -1,4 +1,5 @@
 var dinnerContainer = $("#dinnerContainer");
+var drinkContainer = $("#drinkContainer");
 
 $(document).ready(function () {
   // different meal categories: Beef, Chicken, Lamb, Pork, Seafood, Goat, Vegetarian
@@ -87,6 +88,35 @@ $(document).ready(function () {
     for (var i = 0; i < 5; i++) {
       var drinkId = drinkResponse.drinks[randomNums2[i]].idDrink;
       console.log(drinkId);
+      drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
+      $.ajax({
+        url: drinkInfoURL,
+        method: "GET",
+      }).then(function (response) {
+
+//edit for drinks
+        drinkTitle = response.drinks[0].strDrink;
+        drinkImage = response.drinks[0].strDrinkThumb;
+        drinkRecipe = response.drinks[0].strInstructions;
+        drinkCard = $("<div>")
+          .addClass("card text-center mb-4")
+          .attr("style", "height: 400px; overflow: scroll");
+        cardBody = $("<div>").addClass("card-body");
+        cardTitle = $("<h6>").text(drinkTitle);
+        cardImage = $("<img>")
+          .addClass("rounded float-left")
+          .attr("src", drinkImage)
+          .attr("style", "width: 200px");
+        cardRecipe = $("<p>").addClass("card-detail-text").text(drinkRecipe);
+        cardButton = $("<button>")
+          .addClass("btn btn-sm submit-button")
+          .text("Choose Drink");
+        cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
+        drinkCard.append(cardBody);
+        drinkContainer.append(drinkCard);
+
+
+      })
     }
   });
 
