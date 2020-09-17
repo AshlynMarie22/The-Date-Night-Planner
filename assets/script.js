@@ -2,7 +2,7 @@ $(document).ready(function () {
     console.log("Hello World")
 
     //Create Settings Variable to pass into Ajax Function
-    var genre = ""
+    var genre = "";
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -15,6 +15,9 @@ $(document).ready(function () {
     }
     
     $.ajax(settings).done(function (response) {
-        console.log(response.results[0]);
+        // console.log(response.results[0]);
+        console.log("Movie Title: " + response.results[0].title);
+        console.log("IMDB Rating: " + response.results[0].imdbrating);
+        console.log("Synopsis: " + response.results[0].synopsis);
     });
 });
