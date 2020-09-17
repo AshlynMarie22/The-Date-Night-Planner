@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="./assets/style.css">
     </head>
     <body>
+        <!-- Nav Bar-->
         <nav class="navbar navbar-expand-md navbar-custom">
             <a class="navbar-brand" href="./index.html">THE DATE NIGHT PLANNER</a>
             <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +30,35 @@
               </ul>
             </div>
           </nav>
+        <!--- dinner page main area -->
         <h1>Dinner Page</h1>
+        <div class = "container">
+          <div class = "row">
+            <div class="col-sm-6 d-flex justify-content-center">
+               <!--- HARD CODED where the box with choose food catagory will go -->
+               <p> choose food catagory: </p>
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center" id="generate-dinner-button">
+              <!--- HARD CODED where the generate dinner button will go -->
+              <button>Generate Dinner</button>
+            </div>
+          </div>
+          <div class = "row" id = "view-dinner-cocktail-display">
+            <!--- where VIEW YOUR DINNER MENU will be dynamically populated below this is the demo that will be deleted when js is done-->
+            <div class = "col-sm-6 d-flex justify-content-center" id="view-your-dinner-menu">
+              <!-- dinner menu section title -->
+              <h5>VIEW YOUR DINNER MENU: </h5>
+              <!-- dinner menu cards -->
+            </div>
+            <div class = "col-sm-6 d-flex justify-content-center" id="view-cocktails">
+              <!-- cocktail menu title -->
+              <h5>VIEW COCKTAILS: </h5>
+              <!-- cocktail menu card -->
+            </div>
+
+          </div>
+          
+        </div>
         
 
 
