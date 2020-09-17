@@ -9,7 +9,6 @@ $(document).ready(function () {
     url: mealURL,
     method: "GET",
   }).then(function (mealResponse) {
-    console.log(mealResponse);
     //the length of possible meals
     var num = mealResponse.meals.length;
     //empty array to store random numbers
@@ -21,11 +20,14 @@ $(document).ready(function () {
         randomNums.push(newRandom);
       }
     }
-    console.log(randomNums);
     // iterate through random number array to present us with 5 random meals
     for (var i = 0; i < 5; i++) {
-      console.log(mealResponse.meals[randomNums[i]]);
+      var mealTitle = mealResponse.meals[randomNums[i]].strMeal;
+      var mealImage = mealResponse.meals[randomNums[i]].strMealThumb;
+    var mealId = mealResponse.meals[randomNums[i]].idMeal;
+    console.log(mealTitle);
+    console.log(mealImage);
+    console.log(mealId);
     }
-    
   });
 });
