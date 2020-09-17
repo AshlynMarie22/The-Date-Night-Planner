@@ -5,6 +5,9 @@
 body{
     background-color: #33BC00;
 }
+h1{
+    color: white;
+}
     .navbar{
         background-color: #C10059;
         color: white;
@@ -19,12 +22,11 @@ body{
     .nav-link{
         color: white;
     }
-    .navbar-toggler-icon{
-        background-color: grey;
-    }
+
      .navbar-toggler{
         background-color: white;
     } 
+
     /* .navbar-toggler-icon{
         background-color: white;
     } */
