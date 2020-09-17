@@ -28,7 +28,7 @@ $(document).ready(function () {
     var mealId = "";
     var recipeURL = "";
     for (var i = 0; i < 5; i++) {
-        console.log(randomNums);
+      console.log(randomNums);
 
       mealId = mealResponse.meals[randomNums[i]].idMeal;
       //generate url with meal id
@@ -38,25 +38,29 @@ $(document).ready(function () {
         url: recipeURL,
         method: "GET",
       }).then(function (response) {
-          mealTitle = response.meals[0].strMeal;
-          mealImage = response.meals[0].strMealThumb;
-          mealRecipe = response.meals[0].strInstructions;
-          mealYoutube = response.meals[0].strYoutube;
-          dinnerCard = $("<div>").addClass("card text-center");
-          cardBody = $("<div>").addClass("card-body");
-          cardTitle = $("<h6>").text(mealTitle);
-          cardImage = $("<img>").addClass("rounded float-left").attr("src", mealImage);
-          cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
+        mealTitle = response.meals[0].strMeal;
+        mealImage = response.meals[0].strMealThumb;
+        mealRecipe = response.meals[0].strInstructions;
+        mealYoutube = response.meals[0].strYoutube;
+        dinnerCard = $("<div>").addClass("card text-center");
+        cardBody = $("<div>").addClass("card-body");
+        cardTitle = $("<h6>").text(mealTitle);
+        cardImage = $("<img>")
+          .addClass("rounded float-left")
+          .attr("src", mealImage);
+        cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
         cardYoutube = $("<a>").attr("href", mealYoutube).text("Youtube Link");
-          cardButton = $("<button>").addClass("btn btn-sm submit-button").text("Choose Meal");
-          cardRecipe.append(cardYoutube)
-          cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
-          dinnerCard.append(cardBody);
-          dinnerContainer.append(dinnerCard);
+        cardButton = $("<button>")
+          .addClass("btn btn-sm submit-button")
+          .text("Choose Meal");
+        cardRecipe.append(cardYoutube);
+        cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
+        dinnerCard.append(cardBody);
+        dinnerContainer.append(dinnerCard);
 
-          console.log(dinnerCard);
-          console.log(cardBody);
-          console.log(cardTitle);
+        console.log(dinnerCard);
+        console.log(cardBody);
+        console.log(cardTitle);
 
         // console.log(mealTitle);
         // console.log(mealImage);
@@ -67,9 +71,8 @@ $(document).ready(function () {
   });
 });
 
-
 // Event Listeners
 
-$("#titleButton").on("click", function(event){
-    window.location.href = "./dinner.html";
-})
+$("#titleButton").on("click", function (event) {
+  window.location.href = "./dinner.html";
+});
