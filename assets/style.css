@@ -1,4 +1,30 @@
-<!--- lime green #33BC00 / 
+/* <!--- lime green #33BC00 / 
     pastel green #96DD7C / 
     bright pink #FF0076 / 
-    dark pink #C10059 / --->
+    dark pink #C10059 / ---> */
+body{
+    background-color: #33BC00;
+}
+    .navbar{
+        background-color: #C10059;
+        color: white;
+    }
+    .navbar-custom{
+        color: white;
+    }
+    .navbar-brand{
+        color: white;
+        font-weight: bold;
+    }
+    .nav-link{
+        color: white;
+    }
+    .navbar-toggler-icon{
+        background-color: grey;
+    }
+     .navbar-toggler{
+        background-color: white;
+    } 
+    /* .navbar-toggler-icon{
+        background-color: white;
+    } */
