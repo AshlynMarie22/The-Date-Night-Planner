@@ -34,11 +34,18 @@ $(document).ready(function () {
       }).then(function (response) {
           var mealRecipe = response.meals[0].strInstructions;
           var mealYoutube = response.meals[0].strYoutube;
-        console.log(mealTitle);
-        console.log(mealImage);
-        console.log(mealRecipe);
-        console.log(mealYoutube);
+        // console.log(mealTitle);
+        // console.log(mealImage);
+        // console.log(mealRecipe);
+        // console.log(mealYoutube);
       });
     }
   });
 });
+
+
+// Event Listeners
+
+$("#titleButton").on("click", function(event){
+    window.location.href = "./dinner.html";
+})
