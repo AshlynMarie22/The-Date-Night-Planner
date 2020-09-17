@@ -42,12 +42,12 @@ $(document).ready(function () {
         mealImage = response.meals[0].strMealThumb;
         mealRecipe = response.meals[0].strInstructions;
         mealYoutube = response.meals[0].strYoutube;
-        dinnerCard = $("<div>").addClass("card text-center");
+        dinnerCard = $("<div>").addClass("card text-center mb-4").attr("style", "height: 400px; overflow: scroll");
         cardBody = $("<div>").addClass("card-body");
         cardTitle = $("<h6>").text(mealTitle);
         cardImage = $("<img>")
           .addClass("rounded float-left")
-          .attr("src", mealImage);
+          .attr("src", mealImage).attr("style", "width: 200px");
         cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
         cardYoutube = $("<a>").attr("href", mealYoutube).text("Youtube Link");
         cardButton = $("<button>")
