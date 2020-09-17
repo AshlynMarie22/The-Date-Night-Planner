@@ -19,6 +19,7 @@ $(document).ready(function () {
         console.log("Movie Title: " + response.results[0].title);
         console.log("IMDB Rating: " + response.results[0].imdbrating);
         console.log("Synopsis: " + response.results[0].synopsis);
+        console.log("Image URL: " + response.results[0]);
 
         //Display elements to page
         //Create elements
@@ -32,11 +33,13 @@ $(document).ready(function () {
         movieName.text("Movie Title: " + response.results[0].title)
         movieRating.text("Movie Rating: " + response.results[0].imdbrating)
         movieSynopsis.text("Movie Synopsis: " + response.results[0].synopsis)
+        movieImage.text("Image: " + response.results[0].imageurl[0]);
 
         //Display to Page
         $("#here").append(movieName);
         $("#here").append(movieRating);
         $("#here").append(movieSynopsis);
+        $("#here").append(movieImage);
 
     });
 });
