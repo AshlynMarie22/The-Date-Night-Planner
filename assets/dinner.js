@@ -25,6 +25,7 @@ $(document).ready(function () {
       var mealTitle = mealResponse.meals[randomNums[i]].strMeal;
       var mealImage = mealResponse.meals[randomNums[i]].strMealThumb;
       var mealId = mealResponse.meals[randomNums[i]].idMeal;
+      //generate url with meal id
       var recipeURL =
         "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId;
       $.ajax({
