@@ -2,31 +2,89 @@
     pastel green #96DD7C / 
     bright pink #FF0076 / 
     dark pink #C10059 / ---> */
-body{
-    background-color: #33BC00;
+body {
+  background-color: #33bc00;
 }
-h1{
+h1 {
+  color: white;
+}
+h3 {
+  text-align: center;
+  padding-top: 15px;
+  font-weight: bold;
+}
+.navbar {
+  background-color: #c10059;
+  color: white;
+}
+.navbar-custom {
+  color: white;
+}
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+.nav-link {
+  color: white;
+}
+
+.navbar-toggler {
+  background-color: white;
+}
+a:hover {
+  color: #96dd7c;
+}
+.white-bar {
+  background-color: white;
+  width: 100%;
+  height: 10px;
+}
+.box.col-sm {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  border: dotted;
+  border-width: 5px;
+  border-color: #ff0076;
+  color: #c10059;
+  background-color: #96dd7c;
+  font-size: 25px;
+}
+.btn-circle.btn-xl {
+  align-content: center;
+  width: 175px;
+  height: 175px;
+  padding: 10px 16px;
+  border-radius: 175px;
+  border-color: #c10059;
+  border-width: 7px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ff0076;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #c10059;
     color: white;
-}
-    .navbar{
-        background-color: #C10059;
-        color: white;
-    }
-    .navbar-custom{
-        color: white;
-    }
-    .navbar-brand{
-        color: white;
-        font-weight: bold;
-    }
-    .nav-link{
-        color: white;
-    }
-
-     .navbar-toggler{
-        background-color: white;
-    } 
-
-    /* .navbar-toggler-icon{
+    text-align: center;
+  }
+/* .navbar-toggler-icon{
         background-color: white;
     } */
