@@ -46,5 +46,11 @@ $(document).ready(function () {
         });
     }
 
+    //Function Calls
+    topMovies();
+
+    //Event Listeners
+    
+
 
 });
