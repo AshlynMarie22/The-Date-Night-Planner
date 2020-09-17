@@ -25,13 +25,19 @@ $(document).ready(function () {
       var mealTitle = mealResponse.meals[randomNums[i]].strMeal;
       var mealImage = mealResponse.meals[randomNums[i]].strMealThumb;
       var mealId = mealResponse.meals[randomNums[i]].idMeal;
-      var recipeURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId;
+      var recipeURL =
+        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId;
       $.ajax({
-          url: recipeURL,
-          method: "GET",
-      }).then(function(response){
-        console.log(response.meals[0].strInstructions);
-      })
+        url: recipeURL,
+        method: "GET",
+      }).then(function (response) {
+          var mealRecipe = response.meals[0].strInstructions;
+          var mealYoutube = response.meals[0].strYoutube;
+        console.log(mealTitle);
+        console.log(mealImage);
+        console.log(mealRecipe);
+        console.log(mealYoutube);
+      });
     }
   });
 });
