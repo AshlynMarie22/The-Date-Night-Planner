@@ -4,7 +4,7 @@ $(document).ready(function () {
   var mealType = "Chicken";
   var mealURL =
     "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + mealType;
-// ajax call to get 5 meals based on mealType
+  // ajax call to get 5 meals based on mealType
   $.ajax({
     url: mealURL,
     method: "GET",
@@ -24,10 +24,14 @@ $(document).ready(function () {
     for (var i = 0; i < 5; i++) {
       var mealTitle = mealResponse.meals[randomNums[i]].strMeal;
       var mealImage = mealResponse.meals[randomNums[i]].strMealThumb;
-    var mealId = mealResponse.meals[randomNums[i]].idMeal;
-    console.log(mealTitle);
-    console.log(mealImage);
-    console.log(mealId);
+      var mealId = mealResponse.meals[randomNums[i]].idMeal;
+      var recipeURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealId;
+      $.ajax({
+          url: recipeURL,
+          method: "GET",
+      }).then(function(response){
+        console.log(response.meals[0].strInstructions);
+      })
     }
   });
 });
