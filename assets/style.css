@@ -186,10 +186,12 @@ hr {
   border: solid;
   border-color: #ff0076;
   border-width: 12px;
-  font-size: 18px;
+  background-color: white;
+}
+.final-box h2 {
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
-  background-color: white;
 }
 .drop-down-list a:hover {
   background-image: none;
