@@ -46,7 +46,7 @@ $(document).ready(function () {
           movieImage = response.results[i].imageurl;
           // console.log(movieImage);
           var movieCard = $("<div>")
-            .addClass("card text-center")
+            .addClass("card text-center mb-4")
             .attr("style", "height: 400px;");
           var cardBody = $("<div>")
             .addClass("card-body")
