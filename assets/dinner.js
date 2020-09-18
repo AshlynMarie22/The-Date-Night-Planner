@@ -55,8 +55,9 @@ $(document).ready(function () {
           mealYoutube = response.meals[0].strYoutube;
           dinnerCard = $("<div>")
             .addClass("card text-center mb-4")
-            .attr("style", "height: 400px; overflow: scroll");
-          cardBody = $("<div>").addClass("card-body");
+            .attr("style", "height: 400px");
+          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(mealTitle);
           cardImage = $("<img>")
             .addClass("rounded float-left")
@@ -70,8 +71,9 @@ $(document).ready(function () {
             .addClass("btn btn-sm submit-button chooseDinner")
             .text("Choose Meal");
           cardRecipe.append(cardYoutube);
-          cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
-          dinnerCard.append(cardBody);
+          cardBody.append(cardTitle, cardImage, cardRecipe);
+          cardFooter.append(cardButton);
+          dinnerCard.append(cardBody, cardFooter);
           dinnerContainer.append(dinnerCard);
         });
       }
@@ -158,8 +160,9 @@ $(document).ready(function () {
           //create DOM elements
           drinkCard = $("<div>")
             .addClass("card text-center mb-4")
-            .attr("style", "height: 400px; overflow: scroll");
-          cardBody = $("<div>").addClass("card-body");
+            .attr("style", "height: 400px");
+          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(drinkTitle);
           cardImage = $("<img>")
             .addClass("rounded float-left")
@@ -172,8 +175,9 @@ $(document).ready(function () {
             .addClass("btn btn-sm submit-button chooseDrink")
             .text("Choose Drink");
           //ammend elements to the HTML
-          cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
-          drinkCard.append(cardBody);
+          cardBody.append(cardTitle, cardImage, cardRecipe);
+          cardFooter.append(cardButton)
+          drinkCard.append(cardBody, cardFooter);
           drinkContainer.append(drinkCard);
         });
       }
