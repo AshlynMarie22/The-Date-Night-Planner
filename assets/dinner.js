@@ -63,11 +63,27 @@ $(document).ready(function () {
       });
     }
   });
+  // code to determine drink option 
+  //later set "choice" to $("#foodChoice").val()
+  
+    // if (choice === "Beef") {
+    //   drink = "Scotch";
+    // } else if (choice === "Seafood") {
+    //   drink = "Rum";
+    // } else if (choice === "Pork") {
+    //   drink = "Bourbon";
+    // } else if (choice === "Lamb") {
+    //   drink = "Gin";
+    // } else if (choice === "Chicken") {
+    //   drink = "Vodka";
+    // } else {
+    //   drink = "Tequila";
+    // }
   
   //drink ajax call
-  var drinkType = "Gin";
+  var drink = "Bourbon";
   var drinkURL =
-    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drinkType;
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink;
   // ajax call to get 5 meals based on mealType
   $.ajax({
     url: drinkURL,
