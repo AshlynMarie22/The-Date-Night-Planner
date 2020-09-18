@@ -160,6 +160,7 @@ $(document).ready(function () {
             .addClass("card text-center mb-4")
             .attr("style", "height: 400px; overflow: scroll");
           cardBody = $("<div>").addClass("card-body");
+          cardFooter = $("<div>").addClass("card-footer");
           cardTitle = $("<h6>").text(drinkTitle);
           cardImage = $("<img>")
             .addClass("rounded float-left")
@@ -172,8 +173,9 @@ $(document).ready(function () {
             .addClass("btn btn-sm submit-button chooseDrink")
             .text("Choose Drink");
           //ammend elements to the HTML
-          cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
-          drinkCard.append(cardBody);
+          cardBody.append(cardTitle, cardImage, cardRecipe);
+          cardFooter.append(cardButton)
+          drinkCard.append(cardBody, cardFooter);
           drinkContainer.append(drinkCard);
         });
       }
@@ -190,12 +192,12 @@ $(document).ready(function () {
   $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
-    localStorage.setItem("Dinner", $(this).parent().parent().html());
+    localStorage.setItem("Dinner", $(this).parent().parent().parent().html());
   });
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
-    localStorage.setItem("Drink", $(this).parent().parent().html());
+    localStorage.setItem("Drink", $(this).parent().parent().parent().html());
   });
   // button to move user to dinner page
   $("#titleButton").on("click", function (event) {
