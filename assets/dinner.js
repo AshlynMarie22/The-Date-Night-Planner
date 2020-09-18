@@ -4,6 +4,10 @@ var drinkContainer = $("#drinkContainer");
 var generateDinnerButton = $("#generateDinnerButton");
 
 $(document).ready(function () {
+  
+  //populate user choices from local storage to final page
+  $(".finalDinner").html(localStorage.getItem("Dinner"));
+  $(".finalDrink").html(localStorage.getItem("Drink"));
   // different meal categories: Beef, Chicken, Lamb, Pork, Seafood, Goat, Vegetarian
   //click event
   generateDinnerButton.on("click", function (event) {
@@ -188,6 +192,7 @@ $(document).ready(function () {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Dinner", $(this).parent().parent().html());
+
   });
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
