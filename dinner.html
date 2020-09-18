@@ -12,70 +12,86 @@
     <body>
         <!-- Nav Bar-->
         <nav class="navbar navbar-expand-md navbar-custom">
-            <a class="navbar-brand" href="./index.html">THE DATE NIGHT PLANNER</a>
-            <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-auto">
-                  <a class="nav-link" href="./dinner.html">Dinner</a>
-                </li>
-                <li class="nav-item ml-auto">
-                  <a class="nav-link" href="./movie.html">Movie</a>
-                </li>
-                <li class="nav-item ml-auto">
-                  <a class="nav-link" href="./final.html">Your Date</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div class="white-bar"></div>
+          <a class="navbar-brand" href="./index.html">THE DATE NIGHT PLANNER</a>
+          <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item ml-auto">
+                <a class="nav-link" href="./dinner.html">Dinner</a>
+              </li>
+              <li class="nav-item ml-auto">
+                <a class="nav-link" href="./movie.html">Movie</a>
+              </li>
+              <li class="nav-item ml-auto">
+                <a class="nav-link" href="./final.html">Your Date</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="white-bar"></div>
         <!--- dinner page main area -->
-        <h1>Dinner Page</h1>
-        <div class = "container">
+        <!-- <h1>Dinner Page</h1> -->
+        <div class = "container mt-5">
           <div class = "row">
-            <div class="col-sm-6 center">
+            <div class="col-md-6">
                <!--- HARD CODED where the box with choose food catagory will go -->
-               <p> choose food catagory: </p>
+               <div class="box">
+                <p> choose food catagory: </p>
+                  <div class="input-group drop-down-list">
+                    <select class="custom-select" id="foodChoice">
+                      <option selected>Choose...</option>
+                      <option value="Beef">Beef</option>
+                      <option value="Chicken">Chicken</option>
+                      <option value="Lamb">Lamb</option>
+                      <option value="Pork">Pork</option>
+                      <option value="Seafood">Seafood</option>
+                      <!-- <option value="Goat">Goat</option> -->
+                      <option value="Vegetarian">Vegetarian</option>
+                    </select>
+                  </div>
+                </div>
             </div>
-            <div class="col-sm-6" id="generate-dinner-button">
+            <div class="col-md-6 center">
               <!--- HARD CODED where the generate dinner button will go -->
-              <button class="btn btn-secondary btn-circle btn-xl">Generate Dinner </button>
+              <button class= "btn btn-secondary btn-circle btn-xl" id="generateDinnerButton">Generate Dinner </button>
             </div>
           </div>
-          <div class = "row mb-10" id = "view-dinner-cocktail-display">
+          <div class = "row mb-10">
             
-            <div class = "col-sm-6 flex-column center">
+            <div id="dinnerContainer" class = "col-sm-6 flex-column center">
               <!-- dinner menu section title -->
-              <h5>VIEW YOUR DINNER MENU: </h5>
+              <h5> VIEW YOUR DINNER MENU:</h5>
               <!-- dinner menu cards this is the demo that will be deleted when js is done-->
-              <div class="card text-center">
+              <!-- <div class="card text-center">
                 <div class="card-body">
                   <h6>Recipie Name 1</h6>
                   <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
                   <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
                   <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class = "col-sm-6 flex-column center" id="view-cocktails">
+            <div id="drinkContainer" class = "col-sm-6 flex-column center" id="view-cocktails">
               <!-- cocktail menu title -->
-              <h5>VIEW COCKTAILS: </h5>
+              <h5>&nbsp;&nbsp;&nbsp;&nbsp;VIEW YOUR COCKTAILS:&nbsp;&nbsp;&nbsp;&nbsp;</h5>
               <!-- cocktail menu card -->
-              <div class="card text-center">
+              <!-- <div class="card text-center">
                 <div class="card-body">
                   <h6 class="card-title">Cocktail Name 1</h6>
                   <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
                   <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
                   <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
                 </div>
-              </div>
+              </div> -->
 
             </div>
-
           </div>
-          
+          <div class="row center">
+            <button id="submit-dinner-cocktail" type="button" class="btn btn-secondary btn-long btn-xl">
+            <a href="#" class=""></a>Submit!</button>
+          </div>
         </div>
         
 
