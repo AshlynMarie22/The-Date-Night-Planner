@@ -10,22 +10,15 @@ if (selectionHistory === null) {
 
 $(document).ready(function () {
   console.log("Hello World");
-
+  //Populate User's movie choice to final page
+  $(".finalMovie").html(localStorage.getItem("movie"));
   //Event Listeners
   $("#movie-input-group").change(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
-    choice.push(genreChoice);
-    // function addSelection(choice) {
-    //   if (selectionHistory.includes(genreChoice)) {
-    //     selectionHistory.splice(selectionHistory, indexof(genreChoice), 1);
-    //   }
-    //   selectionHistory.unshift(genreChoice);
-    //   localStorage.setItem("selectionHistory", JSON.stringify(genreChoice));
-    // // }
-    // addSelection();
-    localStorage.setItem("selectionHistory", JSON.stringify(choice));
-    console.log(genreChoice);
+    // choice.push(genreChoice);
+    // localStorage.setItem("selectionHistory", JSON.stringify(choice));
+    // console.log(genreChoice);
     var settings = {
       async: true,
       crossDomain: true,
@@ -36,7 +29,7 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "ott-details.p.rapidapi.com",
-        "x-rapidapi-key": "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
+        "x-rapidapi-key": "51e195c5admsh789132d4252bb28p1f13fajsn58f45623a2aa",
       },
     };
     function topMovies() {
@@ -68,7 +61,7 @@ $(document).ready(function () {
             .addClass("card-detail-text")
             .text(movieSynopsis);
           var chooseButton = $("<button>")
-            .addClass("btn btn-sm submit-button")
+            .addClass("btn btn-sm submit-button chooseMovie")
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
@@ -84,6 +77,18 @@ $(document).ready(function () {
       console.log("I've been clicked");
       //Function Calls
       topMovies();
+    });
+
+    //Saves movie selection to local storage
+    $(document).on("click", ".chooseMovie", function(Event){
+        event.preventDefault();
+        console.log($(this).parent().parent().html())
+        localStorage.setItem("movie", $(this).parent().parent().html());
+    });
+
+    //button to move user to final page
+    $("#submit-movie").on("click", function() {
+        window.location.href = "./final.html";
     });
   });
 });
