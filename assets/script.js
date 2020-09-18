@@ -15,9 +15,9 @@ $(document).ready(function () {
   $("#movie-input-group").change(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
-    choice.push(genreChoice);
-    localStorage.setItem("selectionHistory", JSON.stringify(choice));
-    console.log(genreChoice);
+    // choice.push(genreChoice);
+    // localStorage.setItem("selectionHistory", JSON.stringify(choice));
+    // console.log(genreChoice);
     var settings = {
       async: true,
       crossDomain: true,
@@ -60,7 +60,7 @@ $(document).ready(function () {
             .addClass("card-detail-text")
             .text(movieSynopsis);
           var chooseButton = $("<button>")
-            .addClass("btn btn-sm submit-button")
+            .addClass("btn btn-sm submit-button chooseMovie")
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
@@ -77,5 +77,13 @@ $(document).ready(function () {
       //Function Calls
       topMovies();
     });
+    $(document).on("click", ".chooseMovie", function(Event){
+        event.preventDefault();
+        console.log($(this).parent().parent().html())
+        localStorage.setItem("movie", $(this).parent().parent().html());
+    });
+    $("#submit-movie").on("click", function({
+        
+    }));
   });
 });
