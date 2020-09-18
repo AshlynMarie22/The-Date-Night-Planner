@@ -1,5 +1,13 @@
 var movieDisplay = $("#view-movie-display");
 
+var selectionHistory = localStorage.getItem("selectionHistory");
+
+if (selectionHistory === null) {
+    selectionHistory = [];
+} else {
+    selectionHistory = JSON.parse(selectionHistory);
+}
+
 $(document).ready(function () {
   console.log("Hello World");
 
@@ -125,5 +133,7 @@ $(document).ready(function () {
         topMovies();
       });
   });
+
+  
 
 });
