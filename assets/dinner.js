@@ -55,8 +55,9 @@ $(document).ready(function () {
           mealYoutube = response.meals[0].strYoutube;
           dinnerCard = $("<div>")
             .addClass("card text-center mb-4")
-            .attr("style", "height: 400px; overflow: scroll");
-          cardBody = $("<div>").addClass("card-body");
+            .attr("style", "height: 400px");
+          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(mealTitle);
           cardImage = $("<img>")
             .addClass("rounded float-left")
@@ -70,8 +71,9 @@ $(document).ready(function () {
             .addClass("btn btn-sm submit-button chooseDinner")
             .text("Choose Meal");
           cardRecipe.append(cardYoutube);
-          cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
-          dinnerCard.append(cardBody);
+          cardBody.append(cardTitle, cardImage, cardRecipe);
+          cardFooter.append(cardButton);
+          dinnerCard.append(cardBody, cardFooter);
           dinnerContainer.append(dinnerCard);
         });
       }
@@ -158,9 +160,9 @@ $(document).ready(function () {
           //create DOM elements
           drinkCard = $("<div>")
             .addClass("card text-center mb-4")
-            .attr("style", "height: 400px; overflow: scroll");
-          cardBody = $("<div>").addClass("card-body");
-          cardFooter = $("<div>").addClass("card-footer");
+            .attr("style", "height: 400px");
+          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(drinkTitle);
           cardImage = $("<img>")
             .addClass("rounded float-left")
@@ -192,12 +194,12 @@ $(document).ready(function () {
   $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
-    localStorage.setItem("Dinner", $(this).parent().parent().parent().html());
+    localStorage.setItem("Dinner", $(this).parent().parent().html());
   });
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
-    localStorage.setItem("Drink", $(this).parent().parent().parent().html());
+    localStorage.setItem("Drink", $(this).parent().parent().html());
   });
   // button to move user to dinner page
   $("#titleButton").on("click", function (event) {
