@@ -16,7 +16,7 @@ $(document).ready(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
     choice.push(genreChoice);
-    function addSelection(genreChoice) {
+    function addSelection(choice) {
       if (selectionHistory.includes(genreChoice)) {
         selectionHistory.splice(selectionHistory, indexof(genreChoice), 1);
       }
