@@ -22,19 +22,26 @@ h3 {
 h5 {
   background-color: #c10059;
   color: white; 
-  padding-right: 20px;
-  padding-left: 20px;
+ 
+  text-align: center;
+  border: 4px solid #96DD7C;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 60px;
+  width: 100%;
 }
 h6{
   border-bottom: 1px solid #96DD7C;
   padding-bottom: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
   color: #C10059;
 }
 a{
   color: #c10059;
+  margin-left: 5px; 
+  padding-left: 2px;
+  padding-right: 3px;
 }
 .navbar {
   background-color: #c10059;
@@ -93,10 +100,26 @@ a:hover {
   margin-bottom: 100px;
   border-radius: 40px;
   border-color: #c10059;
-  border-width: 1px;
+  border-width: 4px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+  background-color: #ff0076;
+}
+.submit-button {
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 37.5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  border-color: #c10059;
+  border-width: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
   background-color: #ff0076;
 }
 .btn-bump.btn-xl {
@@ -140,9 +163,9 @@ a:hover {
   padding-bottom: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
-  border: dotted;
-  border-width: 5px;
-  border-color: #ff0076;
+  border: dashed;
+  border-width: 6px;
+  outline-color: #ff0076;
   color: #c10059;
   background-color: #96dd7c;
   font-size: 20px;
@@ -157,6 +180,7 @@ hr {
 .footer {
   position: fixed;
   left: 0;
+  margin-top: 10px;
   bottom: 0;
   width: 100%;
   height: 50px;
@@ -175,6 +199,10 @@ hr {
   font-weight: bold;
   text-align: center;
   background-color: white;
+}
+.drop-down-list a:hover {
+  background-image: none;
+  background-color: #96dd7c;
 }
 /* .navbar-toggler-icon{
         background-color: white;
