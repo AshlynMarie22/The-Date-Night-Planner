@@ -209,4 +209,8 @@ $(document).ready(function () {
   $("#submitMovie").on("click", function (event) {
     window.location.href = "./final.html";
   });
+  // button to move user to starting page
+  $("#returnButton").on("click", function (event) {
+    window.location.href = "./index.html";
+  });
 });
