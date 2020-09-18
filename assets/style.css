@@ -30,10 +30,19 @@ h5 {
 h6 {
   border-bottom: 1px solid #96dd7c;
   padding-bottom: 5px;
+<<<<<<< HEAD
   color: #c10059;
+=======
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #C10059;
+>>>>>>> a3e8c2bd6348ff7ac7f3b0aa26485e044f856c04
 }
 a{
   color: #c10059;
+  margin-left: 5px; 
+  padding-left: 2px;
+  padding-right: 3px;
 }
 .navbar {
   background-color: #c10059;
@@ -92,10 +101,26 @@ a:hover {
   margin-bottom: 100px;
   border-radius: 40px;
   border-color: #c10059;
-  border-width: 1px;
+  border-width: 4px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
+  background-color: #ff0076;
+}
+.submit-button {
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 37.5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  border-color: #c10059;
+  border-width: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
   background-color: #ff0076;
 }
 .btn-bump.btn-xl {
