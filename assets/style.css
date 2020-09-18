@@ -119,7 +119,9 @@ a:hover {
 }
 .box {
   padding-left: 15px;
+  padding-top: 15px;
   padding-right: 30px;
+  padding-bottom: 30px;
   margin-bottom: 30px;
   border: dotted;
   border-width: 5px;
@@ -156,8 +158,6 @@ hr {
   font-weight: bold;
   text-align: center;
   background-color: white;
-
-
 }
 /* .navbar-toggler-icon{
         background-color: white;
