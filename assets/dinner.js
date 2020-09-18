@@ -85,8 +85,7 @@ $(document).ready(function () {
     } else if (mealType === "Chicken") {
       drink = "Vodka";
     } else {
-      drink = "Tequila";
-    }
+      drink = "Tequila";}
 
     //drink ajax call
     // var drink = "Bourbon";
