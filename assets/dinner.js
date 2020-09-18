@@ -60,7 +60,9 @@ $(document).ready(function () {
             .attr("src", mealImage)
             .attr("style", "width: 200px");
           cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
-          cardYoutube = $("<a>").attr({"href":mealYoutube, "target":"nw"}).text("Youtube Link");
+          cardYoutube = $("<a>")
+            .attr({ href: mealYoutube, target: "nw" })
+            .text("Youtube Link");
           cardButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseDinner")
             .text("Choose Meal");
@@ -85,7 +87,8 @@ $(document).ready(function () {
     } else if (mealType === "Chicken") {
       drink = "Vodka";
     } else {
-      drink = "Tequila";}
+      drink = "Tequila";
+    }
 
     //drink ajax call
     // var drink = "Bourbon";
@@ -174,23 +177,23 @@ $(document).ready(function () {
     });
   });
   //clear out dinner and drink choices
-  var clearCards = function(){
-      drinkContainer.empty();
-      dinnerContainer.empty();
-      drinkContainer.append($("<h5>").text(" VIEW YOUR DRINK MENU:"))
-      dinnerContainer.append($("<h5>").text(" VIEW YOUR DINNER MENU:"))
-  }
+  var clearCards = function () {
+    drinkContainer.empty();
+    dinnerContainer.empty();
+    drinkContainer.append($("<h5>").text(" VIEW YOUR DRINK MENU:"));
+    dinnerContainer.append($("<h5>").text(" VIEW YOUR DINNER MENU:"));
+  };
   // Event Listeners
-  $(document).on("click", ".chooseDinner", function(event){
+  $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Dinner", $(this).parent().parent().html());
-  })
-  $(document).on("click", ".chooseDrink", function(event){
+  });
+  $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Drink", $(this).parent().parent().html());
-  })
+  });
 
   $("#titleButton").on("click", function (event) {
     window.location.href = "./dinner.html";
