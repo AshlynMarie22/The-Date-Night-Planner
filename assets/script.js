@@ -1,6 +1,5 @@
 var movieDisplay = $("#view-movie-display");
 
-
 $(document).ready(function () {
   console.log("Hello World");
 
@@ -18,17 +17,7 @@ $(document).ready(function () {
     },
   };
 
-        //Create elements
-        // var movieDiv = $("<div>");
-        // var movieRating = $("<div>");
-        //Add content
-        // movieRating.text(response.results[i].imdbrating)
-                // $("#here").append(movieName);
-        // $("#here").append(movieRating);
-        // $("#here").append(movieSynopsis);
-        // $("#here").append(
-        //   "<img src='" + response.results[i].imageurl[0] + "'/>"
-
+  //Functions
   function topMovies() {
     $.ajax(settings).done(function (response) {
       for (var i = 0; i < 5; i++) {
@@ -71,14 +60,14 @@ $(document).ready(function () {
     });
   }
 
-
-
   //Event Listeners
-  $("#generate-movie-button").on("click", function() {
-      console.log("I've been clicked");
-        //Function Calls
-        topMovies();
-
+  $("#movie-input-group").change(function () {
+      console.log("You selected: " + this.value);
   });
 
+  $("#generate-movie-button").on("click", function () {
+    console.log("I've been clicked");
+    //Function Calls
+    topMovies();
+  });
 });
