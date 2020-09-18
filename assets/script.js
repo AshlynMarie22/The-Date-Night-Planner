@@ -16,9 +16,6 @@ $(document).ready(function () {
   $("#movie-input-group").change(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
-    // choice.push(genreChoice);
-    // localStorage.setItem("selectionHistory", JSON.stringify(choice));
-    // console.log(genreChoice);
     var settings = {
       async: true,
       crossDomain: true,
@@ -50,9 +47,12 @@ $(document).ready(function () {
           // console.log(movieImage);
           var movieCard = $("<div>")
             .addClass("card text-center")
-            .attr("style", "height: 400px; overflow: scroll");
-          var cardBody = $("<div>").addClass("card-body");
+            .attr("style", "height: 400px;");
+          var cardBody = $("<div>")
+            .addClass("card-body")
+            .attr("style", "overflow: scroll");
           var cardTitle = $("<h6>").addClass("card-title").text(movieName);
+          var cardFooter = $("<div>").addClass("card-footer sticky");
           var cardImage = $("<img>")
             .addClass("rounded")
             .attr("src", movieImage)
@@ -65,9 +65,11 @@ $(document).ready(function () {
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
-          cardBody.append(cardTitle, cardImage, synopsis, chooseButton);
-          //Append cardBody to movieCard
-          movieCard.append(cardBody);
+          cardBody.append(cardTitle, cardImage, synopsis);
+          //Append Button to footer
+          cardFooter.append(chooseButton);
+          //Append cardBody and card footer to movieCard
+          movieCard.append(cardBody, cardFooter);
           //Append movieCard to movieDisplay
           movieDisplay.append(movieCard);
         }
@@ -80,15 +82,15 @@ $(document).ready(function () {
     });
 
     //Saves movie selection to local storage
-    $(document).on("click", ".chooseMovie", function(Event){
-        event.preventDefault();
-        console.log($(this).parent().parent().html())
-        localStorage.setItem("movie", $(this).parent().parent().html());
+    $(document).on("click", ".chooseMovie", function (Event) {
+      event.preventDefault();
+      console.log($(this).parent().parent().html());
+      localStorage.setItem("movie", $(this).parent().parent().html());
     });
 
     //button to move user to final page
-    $("#submit-movie").on("click", function() {
-        window.location.href = "./final.html";
+    $("#submit-movie").on("click", function () {
+      window.location.href = "./final.html";
     });
   });
 });
