@@ -30,13 +30,28 @@
               </ul>
             </div>
           </nav>
+          <div class="white-bar"></div>
         <!--- dinner page main area -->
         <h1>Dinner Page</h1>
         <div class = "container">
           <div class = "row">
             <div class="col-sm-6 center">
                <!--- HARD CODED where the box with choose food catagory will go -->
+               <div class="box">
                <p> choose food catagory: </p>
+                <div class="input-group mb-3"></div>
+                  <select class="custom-select" id="inputGroupSelect02">
+                    <option selected>Choose...</option>
+                    <option value="1">Beef</option>
+                    <option value="2">Chicken</option>
+                    <option value="3">Lamb</option>
+                    <option value="4">Pork</option>
+                    <option value="5">Seafood</option>
+                    <option value="6">Goat</option>
+                    <option value="7">Vegetarian</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <div class="col-sm-6 center">
               <!--- HARD CODED where the generate dinner button will go -->
@@ -49,27 +64,27 @@
               <!-- dinner menu section title -->
               <h5> VIEW YOUR DINNER MENU:</h5>
               <!-- dinner menu cards this is the demo that will be deleted when js is done-->
-              <div class="card text-center">
+              <!-- <div class="card text-center">
                 <div class="card-body">
                   <h6>Recipie Name 1</h6>
                   <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
                   <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
                   <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class = "col-sm-6 flex-column center" id="view-cocktails">
+            <div id="drinkContainer" class = "col-sm-6 flex-column center" id="view-cocktails">
               <!-- cocktail menu title -->
               <h5>&nbsp;&nbsp;&nbsp;&nbsp;VIEW YOUR COCKTAILS:&nbsp;&nbsp;&nbsp;&nbsp;</h5>
               <!-- cocktail menu card -->
-              <div class="card text-center">
+              <!-- <div class="card text-center">
                 <div class="card-body">
                   <h6 class="card-title">Cocktail Name 1</h6>
                   <img src="http://www.fillmurray.com/200/200" class="rounded float-left" alt="...">
                   <p class="card-detail-text">With supporting text below as a natural lead-in to additional content.</p>
                   <a href="#" class="btn btn-sm submit-button">Choose Meal</a>
                 </div>
-              </div>
+              </div> -->
 
             </div>
 
