@@ -183,8 +183,13 @@ $(document).ready(function () {
   // Event Listeners
   $(document).on("click", ".chooseDinner", function(event){
     event.preventDefault();
-    console.log($(this));
-    // localStorage.setItem("Dinner", $(this).parentElement.val())
+    // console.log($(this).parent().parent().html())
+    localStorage.setItem("Dinner", $(this).parent().parent().html());
+  })
+  $(document).on("click", ".chooseDrink", function(event){
+    event.preventDefault();
+    // console.log($(this).parent().parent().html())
+    localStorage.setItem("Drink", $(this).parent().parent().html());
   })
 
   $("#titleButton").on("click", function (event) {
