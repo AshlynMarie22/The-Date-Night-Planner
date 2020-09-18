@@ -193,6 +193,12 @@ hr {
   font-weight: bold;
   text-align: center;
 }
+.card {
+  height: 400px;
+}
+.hide {
+  display: none;
+}
 .drop-down-list a:hover {
   background-image: none;
   background-color: #96dd7c;
