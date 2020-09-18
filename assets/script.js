@@ -71,8 +71,14 @@ $(document).ready(function () {
     });
   }
 
-  //Function Calls
-  topMovies();
+
 
   //Event Listeners
+  $("#generate-movie-button").on("click", function() {
+      console.log("I've been clicked");
+        //Function Calls
+        topMovies();
+
+  });
+
 });
