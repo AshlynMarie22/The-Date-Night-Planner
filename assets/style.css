@@ -112,6 +112,19 @@ a:hover {
   text-align: center;
   background-color: #ff0076;
 }
+.btn-bump.btn-xl:disabled {
+  align-content: center;
+  margin-top: 30px;
+  margin-bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  border-color: #ff0076;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ff0076;
+}
 .center {
   display: flex;
   justify-content: center;
