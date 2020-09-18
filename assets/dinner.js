@@ -60,7 +60,7 @@ $(document).ready(function () {
             .attr("src", mealImage)
             .attr("style", "width: 200px");
           cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
-          cardYoutube = $("<a>").attr("href", mealYoutube).text("Youtube Link");
+          cardYoutube = $("<a>").attr({"href":mealYoutube, "target":"nw"}).text("Youtube Link");
           cardButton = $("<button>")
             .addClass("btn btn-sm submit-button")
             .text("Choose Meal");
