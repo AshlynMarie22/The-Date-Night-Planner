@@ -16,14 +16,6 @@ $(document).ready(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
     choice.push(genreChoice);
-    // function addSelection(choice) {
-    //   if (selectionHistory.includes(genreChoice)) {
-    //     selectionHistory.splice(selectionHistory, indexof(genreChoice), 1);
-    //   }
-    //   selectionHistory.unshift(genreChoice);
-    //   localStorage.setItem("selectionHistory", JSON.stringify(genreChoice));
-    // // }
-    // addSelection();
     localStorage.setItem("selectionHistory", JSON.stringify(choice));
     console.log(genreChoice);
     var settings = {
@@ -36,7 +28,7 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "ott-details.p.rapidapi.com",
-        "x-rapidapi-key": "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
+        "x-rapidapi-key": "51e195c5admsh789132d4252bb28p1f13fajsn58f45623a2aa",
       },
     };
     function topMovies() {
