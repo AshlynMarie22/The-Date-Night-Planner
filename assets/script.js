@@ -10,7 +10,7 @@ $(document).ready(function () {
     async: true,
     crossDomain: true,
     url:
-      "https://ott-details.p.rapidapi.com/advancedsearch?end_year=2020&start_year=2019&min_imdb=6&page=1&genre=action&type=movie&language=english&sort=highestrated",
+      "https://ott-details.p.rapidapi.com/advancedsearch?end_year=2020&start_year=2019&min_imdb=6&page=1&genre=comedy&type=movie&language=english&sort=highestrated",
     method: "GET",
     headers: {
       "x-rapidapi-host": "ott-details.p.rapidapi.com",
@@ -36,16 +36,15 @@ $(document).ready(function () {
         console.log("Movie Title: " + response.results[i].title);
         console.log("IMDB Rating: " + response.results[i].imdbrating);
         console.log("Synopsis: " + response.results[i].synopsis);
-        console.log(response.results[0].imageurl[i]);
-
+        console.log("Image URL: " + response.results[i].imageurl[i]);
         //Create Elements and Add Content
         var movieName = "";
         var movieSynopsis = "";
         var movieImage = "";
         movieName = response.results[i].title;
         movieSynopsis = response.results[i].synopsis;
-        movieImage = response.results[i].imageurl[i];
-        console.log(movieImage);
+        movieImage = response.results[i].imageurl;
+        // console.log(movieImage);
         var movieCard = $("<div>")
           .addClass("card text-center")
           .attr("style", "height: 400px; overflow: scroll");
@@ -61,7 +60,6 @@ $(document).ready(function () {
         var chooseButton = $("<button>")
           .addClass("btn btn-sm submit-button")
           .text("Choose Movie");
-
         //Display to Page
         //Append title, image synopsis and choose button to card body
         cardBody.append(cardTitle, cardImage, synopsis, chooseButton);
