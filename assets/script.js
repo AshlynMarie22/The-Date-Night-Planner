@@ -16,14 +16,14 @@ $(document).ready(function () {
     console.log("You selected: " + this.value);
     var genreChoice = this.value;
     choice.push(genreChoice);
-    function addSelection(choice) {
-      if (selectionHistory.includes(genreChoice)) {
-        selectionHistory.splice(selectionHistory, indexof(genreChoice), 1);
-      }
-      selectionHistory.unshift(genreChoice);
-      localStorage.setItem("selectionHistory", JSON.stringify(genreChoice));
-    }
-    addSelection();
+    // function addSelection(choice) {
+    //   if (selectionHistory.includes(genreChoice)) {
+    //     selectionHistory.splice(selectionHistory, indexof(genreChoice), 1);
+    //   }
+    //   selectionHistory.unshift(genreChoice);
+    //   localStorage.setItem("selectionHistory", JSON.stringify(genreChoice));
+    // // }
+    // addSelection();
     localStorage.setItem("selectionHistory", JSON.stringify(choice));
     console.log(genreChoice);
     var settings = {
