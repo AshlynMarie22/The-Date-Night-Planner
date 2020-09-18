@@ -197,8 +197,16 @@ $(document).ready(function () {
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Drink", $(this).parent().parent().html());
   });
-
+  // button to move user to dinner page
   $("#titleButton").on("click", function (event) {
     window.location.href = "./dinner.html";
+  });
+  // button to move user to movie page
+  $("#submitDinner").on("click", function (event) {
+    window.location.href = "./movie.html";
+  });
+  // button to move user to final page
+  $("#submitMovie").on("click", function (event) {
+    window.location.href = "./final.html";
   });
 });
