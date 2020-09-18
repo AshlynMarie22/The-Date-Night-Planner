@@ -62,7 +62,7 @@ $(document).ready(function () {
           cardRecipe = $("<p>").addClass("card-detail-text").text(mealRecipe);
           cardYoutube = $("<a>").attr({"href":mealYoutube, "target":"nw"}).text("Youtube Link");
           cardButton = $("<button>")
-            .addClass("btn btn-sm submit-button")
+            .addClass("btn btn-sm submit-button chooseDinner")
             .text("Choose Meal");
           cardRecipe.append(cardYoutube);
           cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
@@ -163,7 +163,7 @@ $(document).ready(function () {
             .addClass("card-detail-text")
             .text(drinkIngredients + drinkRecipe);
           cardButton = $("<button>")
-            .addClass("btn btn-sm submit-button")
+            .addClass("btn btn-sm submit-button chooseDrink")
             .text("Choose Drink");
           //ammend elements to the HTML
           cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
@@ -181,6 +181,11 @@ $(document).ready(function () {
       dinnerContainer.append($("<h5>").text(" VIEW YOUR DINNER MENU:"))
   }
   // Event Listeners
+  $(document).on("click", ".chooseDinner", function(event){
+    event.preventDefault();
+    console.log($(this));
+    // localStorage.setItem("Dinner", $(this).parentElement.val())
+  })
 
   $("#titleButton").on("click", function (event) {
     window.location.href = "./dinner.html";
