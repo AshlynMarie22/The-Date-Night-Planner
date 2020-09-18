@@ -10,7 +10,8 @@ if (selectionHistory === null) {
 
 $(document).ready(function () {
   console.log("Hello World");
-
+  //Populate User's movie choice to final page
+  $(".finalMovie").html(localStorage.getItem("movie"));
   //Event Listeners
   $("#movie-input-group").change(function () {
     console.log("You selected: " + this.value);
@@ -77,13 +78,17 @@ $(document).ready(function () {
       //Function Calls
       topMovies();
     });
+
+    //Saves movie selection to local storage
     $(document).on("click", ".chooseMovie", function(Event){
         event.preventDefault();
         console.log($(this).parent().parent().html())
         localStorage.setItem("movie", $(this).parent().parent().html());
     });
-    $("#submit-movie").on("click", function({
-        
-    }));
+
+    //button to move user to final page
+    $("#submit-movie").on("click", function() {
+        window.location.href = "./final.html";
+    });
   });
 });
