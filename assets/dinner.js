@@ -98,6 +98,31 @@ $(document).ready(function () {
         drinkTitle = response.drinks[0].strDrink;
         drinkImage = response.drinks[0].strDrinkThumb;
         drinkRecipe = response.drinks[0].strInstructions;
+        drinkIngredients = "Ingredients: ";
+          if (response.drinks[0].strIngredient1){
+            drinkIngredients += (response.drinks[0].strIngredient1 + ", ");
+          }
+          if (response.drinks[0].strIngredient2){
+            drinkIngredients += (response.drinks[0].strIngredient2 + ", ");
+          }
+          if (response.drinks[0].strIngredient3){
+            drinkIngredients += (response.drinks[0].strIngredient3 + ", ");
+          }
+          if (response.drinks[0].strIngredient4){
+            drinkIngredients += (response.drinks[0].strIngredient4 + ", ");
+          }
+          if (response.drinks[0].strIngredient5){
+            drinkIngredients += (response.drinks[0].strIngredient5 + ", ");
+          }
+          if (response.drinks[0].strIngredient6){
+            drinkIngredients += (response.drinks[0].strIngredient6 + ", ");
+          }
+          if (response.drinks[0].strIngredient7){
+            drinkIngredients += (response.drinks[0].strIngredient7 + ", ");
+          }
+          if (response.drinks[0].strIngredient8){
+            drinkIngredients += (response.drinks[0].strIngredient8 + ", ");
+          }
         drinkCard = $("<div>")
           .addClass("card text-center mb-4")
           .attr("style", "height: 400px; overflow: scroll");
@@ -107,7 +132,7 @@ $(document).ready(function () {
           .addClass("rounded float-left")
           .attr("src", drinkImage)
           .attr("style", "width: 200px");
-        cardRecipe = $("<p>").addClass("card-detail-text").text(drinkRecipe);
+        cardRecipe = $("<p>").addClass("card-detail-text").text(drinkIngredients + drinkRecipe);
         cardButton = $("<button>")
           .addClass("btn btn-sm submit-button")
           .text("Choose Drink");
