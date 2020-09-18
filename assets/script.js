@@ -1,4 +1,4 @@
-
+var movieDisplay = $("#view-movie-display");
 
 
 $(document).ready(function () {
@@ -65,11 +65,10 @@ $(document).ready(function () {
         //Display to Page
         //Append title, image synopsis and choose button to card body
         cardBody.append(cardTitle, cardImage, synopsis, chooseButton);
-
         //Append cardBody to movieCard
         movieCard.append(cardBody);
-        //Append movieCard to 
-        // );
+        //Append movieCard to movieDisplay
+        movieDisplay.append(movieCard);
       }
     });
   }
