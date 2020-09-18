@@ -84,20 +84,23 @@ $(document).ready(function () {
         randomNums2.push(newRandom2);
       }
     }
-    console.log(randomNums2)
+    //generate 5 different drink id's
     for (var i = 0; i < 5; i++) {
       var drinkId = drinkResponse.drinks[randomNums2[i]].idDrink;
       console.log(drinkId);
+      //use the drink id's to generate info for 5 different cocktails url's
       drinkInfoURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
+      //make the ajax call 
       $.ajax({
         url: drinkInfoURL,
         method: "GET",
       }).then(function (response) {
 
-//edit for drinks
+        //create drink variables
         drinkTitle = response.drinks[0].strDrink;
         drinkImage = response.drinks[0].strDrinkThumb;
         drinkRecipe = response.drinks[0].strInstructions;
+        //iterate through possible ingredient properties of drink object
         drinkIngredients = "Ingredients: ";
           if (response.drinks[0].strIngredient1){
             drinkIngredients += (response.drinks[0].strIngredient1 + ", ");
@@ -123,6 +126,7 @@ $(document).ready(function () {
           if (response.drinks[0].strIngredient8){
             drinkIngredients += (response.drinks[0].strIngredient8 + ", ");
           }
+        //create DOM elements
         drinkCard = $("<div>")
           .addClass("card text-center mb-4")
           .attr("style", "height: 400px; overflow: scroll");
@@ -136,11 +140,10 @@ $(document).ready(function () {
         cardButton = $("<button>")
           .addClass("btn btn-sm submit-button")
           .text("Choose Drink");
+        //ammend elements to the HTML
         cardBody.append(cardTitle, cardImage, cardRecipe, cardButton);
         drinkCard.append(cardBody);
         drinkContainer.append(drinkCard);
-
-
       })
     }
   });
