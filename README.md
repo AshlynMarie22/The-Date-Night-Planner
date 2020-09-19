@@ -24,22 +24,22 @@ https://cgriffin332.github.io/The-Date-Night-Planner/
 ## Usage 
 
 This application starts with the Date Night planner home page, where the user is instructed to click the "Start your date" button. 
-![Image of Title Page]()
+![Image of Title Page](./assets/images/date1.png)
 
 The user is taken to a page where they are able to choose the food base for their type of meal (chicken, seafood, vegitarian, etc.). 
-![Image Choose Dinner Page]()
+![Image Choose Dinner Page](./assets/images/date2.png)
 
 After they lock in their decision by clicking the  "gennerate dinner" button their randomly generated recipie cards appear as well as suggested cocktail pairings. This is achieved through ajax queries to the TheMealDB api, and TheCocktailDB api, from where our suggestions originate and they are dynamically populated under their appropriate headings on the page. 
-![Image Populated Meals]()
+![Image Populated Meals](./assets/images/date3.png)
 
 The user is then given a "choose meal" and "choose drink" option that adds the respective choice to local storage to be displayed on the final page. Then the user can click the "to movie choice", which will migrate them to the movie page. 
-![Image Choose Movie Page]()
+![Image Choose Movie Page](./assets/images/date4.png)
 
 On the movie page the user is allowed to choose the genre of movie and after clicking the "generate movie" button, by using the OTT Details api and our code, random movies with a 8.5 imdb rating or above are randomly dynamically populated under the movie choices heading. 
-![Image Populated Movies]()
+![Image Populated Movies](./assets/images/date5.png)
 
 The user again can select a movie and click the "see your date" button, and is brought to the final page. 
-![Image of Final Page]()
+![Image of Final Page](./assets/images/date6.png)
 
 On the final page, under the heading "its a date" the user can view their selected date options that are dynamically populated from local storage. If they wish to choose again they can click the "new date" button and redo the process or choose meal, movie, or your date to change a specific aspect of their selection and return to the final page.
 
