@@ -41,7 +41,7 @@ $(document).ready(function () {
           var movieName = "";
           var movieSynopsis = "";
           var movieImage = "";
-          var releaseDate = "",
+          var releaseDate = "";
           var movieRating = "";
           var movieId = "";
           movieName = response.results[i].title;
@@ -74,7 +74,7 @@ $(document).ready(function () {
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
-          cardBody.append(cardTitle, cardImage, cardDate, cardRating, synopsis, movieId);
+          cardBody.append(cardTitle, cardImage, cardDate, cardRating, synopsis, cardId);
           //Append Button to footer
           cardFooter.append(chooseButton);
           //Append cardBody and card footer to movieCard
