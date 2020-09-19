@@ -193,7 +193,6 @@ $(document).ready(function () {
   // Event Listeners
   $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
-    cardFooter.addClass("hide");
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Dinner", $(this).parent().parent().html());
   });
