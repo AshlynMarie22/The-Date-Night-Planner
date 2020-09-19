@@ -186,22 +186,6 @@ $(document).ready(function () {
   $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
-  // var generateModalDinner = function(){
-  //   var modal = $("<div>").addClass("modal").attr({"tabindex":"-1", role:"dialog", "id":"myModal"});
-  //   var modalDialog = $("<div>").addClass("modal-dialog").attr("role", "document");
-  //   var modalContent = $("<div>").addClass("modal-content");
-  //   var modalHeader = $("<div>").addClass("modal-header");
-  //   var modalBody = $("<div>").addClass("modal-body").text("Your choice has been saved!")
-  //   var modalTitle = $("<div>").addClass("modal-title").text("Selected");
-  //   var modalBtn = $("<button>").addClass("close").attr({"type":"button", "data-dismiss":"modal", "aria-label":"Close"});
-  //   var span = $("<span>").attr("area-hidden", "true").text("&times;")
-  //   modalBtn.append(span);
-  //   modalHeader.append(modalTitle, modalBtn);
-  //   modalContent.append(modalHeader, modalBody);
-  //   modalDialog.append(modalContent);
-  //   modal.append(modalDialog);
-  //   dinnerContainer.append(modal);
-  // }
   //clear out dinner and drink choices
   var clearCards = function () {
     drinkContainer.empty();
