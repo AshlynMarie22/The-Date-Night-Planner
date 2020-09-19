@@ -210,7 +210,7 @@ $(document).ready(function () {
     // empty dinner container
     drinkContainer.empty();
     //show h5
-    drinkContainer.append($("<h5>").text("Thank you for submitting your dinner option!"));
+    drinkContainer.append($("<h5>").text("Thank you for submitting your drink option!"));
   });
   // button to move user to dinner page
   $("#titleButton").on("click", function (event) {

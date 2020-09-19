@@ -38,7 +38,9 @@ $(document).ready(function () {
         for (var i = 0; i < 5; i++) {
           console.log(response.results[i]);
           console.log("Movie Title: " + response.results[randomNums[i]].title);
-          console.log("IMDB Rating: " + response.results[randomNums[i]].imdbrating);
+          console.log(
+            "IMDB Rating: " + response.results[randomNums[i]].imdbrating
+          );
           console.log("Synopsis: " + response.results[randomNums[i]].synopsis);
           console.log("Image URL: " + response.results[randomNums[i]].imageurl);
           //Create Elements and Add Content
@@ -67,18 +69,31 @@ $(document).ready(function () {
             .addClass("rounded float-left")
             .attr("src", movieImage)
             .attr("style", "width: 200px");
-          var cardDate = $("<p>").addClass("card-detail-text").text("Year Released: " + releaseDate);
+          var cardDate = $("<p>")
+            .addClass("card-detail-text")
+            .text("Year Released: " + releaseDate);
           var synopsis = $("<p>")
             .addClass("card-detail-text")
             .text("Plot: " + movieSynopsis);
-          var cardRating = $("<p>").addClass("card-detail-text").text("IMDb Rating: " + movieRating);
-          var cardId = $("<p>").addClass("card-detail-text").text("IMDb ID: " + movieId);
+          var cardRating = $("<p>")
+            .addClass("card-detail-text")
+            .text("IMDb Rating: " + movieRating);
+          var cardId = $("<p>")
+            .addClass("card-detail-text")
+            .text("IMDb ID: " + movieId);
           var chooseButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseMovie")
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
-          cardBody.append(cardTitle, cardImage, cardDate, cardRating, synopsis, cardId);
+          cardBody.append(
+            cardTitle,
+            cardImage,
+            cardDate,
+            cardRating,
+            synopsis,
+            cardId
+          );
           //Append Button to footer
           cardFooter.append(chooseButton);
           //Append cardBody and card footer to movieCard
@@ -99,6 +114,12 @@ $(document).ready(function () {
       event.preventDefault();
       console.log($(this).parent().parent().html());
       localStorage.setItem("movie", $(this).parent().parent().html());
+      // empty dinner container
+      $("#view-your-movies").empty();
+      //show h5
+      $("#view-your-movies").append(
+        $("<h5>").text("Thank you for submitting your movie option!")
+      );
     });
 
     //button to move user to final page
