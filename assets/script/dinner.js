@@ -183,6 +183,9 @@ $(document).ready(function () {
       }
     });
   });
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
   //clear out dinner and drink choices
   var clearCards = function () {
     drinkContainer.empty();
@@ -195,11 +198,19 @@ $(document).ready(function () {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Dinner", $(this).parent().parent().html());
+    // empty dinner container
+    dinnerContainer.empty();
+    //show h5
+    dinnerContainer.append($("<h5>").text("Thank you for submitting your dinner option!"));
   });
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
     // console.log($(this).parent().parent().html())
     localStorage.setItem("Drink", $(this).parent().parent().html());
+    // empty dinner container
+    drinkContainer.empty();
+    //show h5
+    drinkContainer.append($("<h5>").text("Thank you for submitting your dinner option!"));
   });
   // button to move user to dinner page
   $("#titleButton").on("click", function (event) {
