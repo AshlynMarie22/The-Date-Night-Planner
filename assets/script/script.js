@@ -82,7 +82,7 @@ $(document).ready(function () {
           .text("IMDb ID: " + movieId);
         var chooseButton = $("<button>")
           .addClass("btn btn-sm submit-button chooseMovie")
-          .text("Choose Movie");
+          .text("CHOOSE MOVIE");
         //Display to Page
         //Append title, image synopsis and choose button to card body
         cardBody.append(
