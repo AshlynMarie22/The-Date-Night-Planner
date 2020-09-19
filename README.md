@@ -27,18 +27,24 @@ This application starts with the Date Night planner home page, where the user is
 ![Image of Title Page](./assets/images/date1.png)
 
 The user is taken to a page where they are able to choose the food base for their type of meal (chicken, seafood, vegitarian, etc.). 
-![Image Choose Dinner Page](./assets/images/date2.png)
+![Image Choose Dinner Page](./assets/images/date2.1.png)
 
-After they lock in their decision by clicking the  "gennerate dinner" button their randomly generated recipie cards appear as well as suggested cocktail pairings. This is achieved through ajax queries to the TheMealDB api, and TheCocktailDB api, from where our suggestions originate and they are dynamically populated under their appropriate headings on the page. 
+After they lock in their decision by clicking the  "gennerate dinner" button their randomly generated recipie cards appear as well as suggested cocktail pairings. This is achieved through ajax queries to the TheMealDB api, and TheCocktailDB api, from where our suggestions originate and they are dynamically populated under their appropriate headings on the page. The user is then given a "choose meal" and "choose drink" option that adds the respective choice to local storage to be displayed on the final page. 
 ![Image Populated Meals](./assets/images/date3.png)
 
-The user is then given a "choose meal" and "choose drink" option that adds the respective choice to local storage to be displayed on the final page. Then the user can click the "to movie choice", which will migrate them to the movie page. 
-![Image Choose Movie Page](./assets/images/date4.png)
+Once choices are made, the user is shown "Thank you for submitting your option." and can click the "to movie choice", which will migrate them to the movie page.
+![Image Dinner Choice Made](./assets/images/date3.5.png)
 
-On the movie page the user is allowed to choose the genre of movie and after clicking the "generate movie" button, by using the OTT Details api and our code, random movies with a 8.5 imdb rating or above are randomly dynamically populated under the movie choices heading. 
-![Image Populated Movies](./assets/images/date5.png)
+ On the movie page the user is allowed to choose the genre of movie they would like to watch.
+![Image Choose Movie Page](./assets/images/date4.1.png)
 
-The user again can select a movie and click the "see your date" button, and is brought to the final page. 
+ After clicking the "generate movie" button, by using the OTT Details api and our code, random movies with a 8.5 imdb rating or above are randomly dynamically populated under the movie choices heading. 
+![Image Populated Movies](./assets/images/date5.1.png)
+
+The user again can select a movie and they are thanked for submitting their choice.
+![Image of Final Page](./assets/images/date5.5.png)
+
+The user can then click the "see your date" button, and is brought to the final page. 
 ![Image of Final Page](./assets/images/date6.png)
 
 On the final page, under the heading "its a date" the user can view their selected date options that are dynamically populated from local storage. If they wish to choose again they can click the "new date" button and redo the process or choose meal, movie, or your date to change a specific aspect of their selection and return to the final page.
@@ -48,24 +54,24 @@ On the final page, under the heading "its a date" the user can view their select
 Members of our team include Rayshawn Bray, Erin Crocker, Calvin Griffin, and Ashlyn Smith. Our team accomplished this using HTML, CSS, JavaScript and Jquery, as well as TheMealDB api, TheCocktailDB api, and OTT Details api.
 
 ## Contact
-Rayshawn Bray
-Email: raybray219@yahoo.com
-LinkedIn: www.linkedin.com/in/rayshawnbray
+Rayshawn Bray <br />
+Email: raybray219@yahoo.com <br />
+LinkedIn: www.linkedin.com/in/rayshawnbray <br />
 Portfolio: https://2coldray.github.io/portfolio-update/
 
-Erin Crocker
-Email: erinleecrocker@gmail.com
-LinkedIn: https://www.linkedin.com/mwlite/in/erinleecrocker
+Erin Crocker <br />
+Email: erinleecrocker@gmail.com <br />
+LinkedIn: https://www.linkedin.com/mwlite/in/erinleecrocker <br />
 Portfolio: https://erinleecrocker.github.io/Professional-Portfolio-Website/
 
-Calvin Griffin
-Email: cgriffin332@gmail.com
-LinkedIn: https://www.linkedin.com/in/calvin-griffin-8247521b7/
+Calvin Griffin <br />
+Email: cgriffin332@gmail.com <br />
+LinkedIn: https://www.linkedin.com/in/calvin-griffin-8247521b7/ <br />
 Portfolio: https://cgriffin332.github.io/Updated-Portfolio332/
 
-Ashlyn Smith
-Email: ashlyn.marie.smith2@gmail.com
-LinkedIn: https://www.linkedin.com/in/ashlynmsmith2/
+Ashlyn Smith <br />
+Email: ashlyn.marie.smith2@gmail.com <br />
+LinkedIn: https://www.linkedin.com/in/ashlynmsmith2/ <br />
 Portfolio: https://ashlynmarie22.github.io/Ashlyn_Smith-s_Portfolio/
 
 ## License
