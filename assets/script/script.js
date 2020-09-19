@@ -9,7 +9,8 @@ $(document).ready(function () {
   //Event Listeners
   $("#movie-input-group").change(function () {
     console.log("You selected: " + this.value);
-    var genreChoice = this.value;
+    var genreChoice = $("#movie-input-group").val();
+    console.log("Double select: " + genreChoice);
     var settings = {
       async: true,
       crossDomain: true,
@@ -105,6 +106,8 @@ $(document).ready(function () {
     }
     $("#generate-movie-button").on("click", function () {
       console.log("I've been clicked");
+      //Empty Container
+      $("#view-movie-display").empty();
       //Function Calls
       topMovies();
     });
