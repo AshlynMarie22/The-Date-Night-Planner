@@ -2,12 +2,6 @@ var movieDisplay = $("#view-movie-display");
 var selectionHistory = localStorage.getItem("selectionHistory");
 var choice = [];
 
-if (selectionHistory === null) {
-  selectionHistory = [];
-} else {
-  selectionHistory = JSON.parse(selectionHistory);
-}
-
 $(document).ready(function () {
   console.log("Hello World");
   //Populate User's movie choice to final page
@@ -29,14 +23,24 @@ $(document).ready(function () {
         "x-rapidapi-key": "51e195c5admsh789132d4252bb28p1f13fajsn58f45623a2aa",
       },
     };
+
     function topMovies() {
       $.ajax(settings).done(function (response) {
+        //Generate random number
+        var randomNums = [];
+        var num = response.results.length;
+        while (randomNums.length < 5) {
+          var newRandom = Math.floor(Math.random() * num);
+          if (!randomNums.includes(newRandom)) {
+            randomNums.push(newRandom);
+          }
+        }
         for (var i = 0; i < 5; i++) {
           console.log(response.results[i]);
-          console.log("Movie Title: " + response.results[i].title);
-          console.log("IMDB Rating: " + response.results[i].imdbrating);
-          console.log("Synopsis: " + response.results[i].synopsis);
-          console.log("Image URL: " + response.results[i].imageurl[i]);
+          console.log("Movie Title: " + response.results[randomNums[i]].title);
+          console.log("IMDB Rating: " + response.results[randomNums[i]].imdbrating);
+          console.log("Synopsis: " + response.results[randomNums[i]].synopsis);
+          console.log("Image URL: " + response.results[randomNums[i]].imageurl);
           //Create Elements and Add Content
           var movieName = "";
           var movieSynopsis = "";
@@ -44,12 +48,12 @@ $(document).ready(function () {
           var releaseDate = "";
           var movieRating = "";
           var movieId = "";
-          movieName = response.results[i].title;
-          movieSynopsis = response.results[i].synopsis;
-          movieImage = response.results[i].imageurl;
-          releaseDate = response.results[i].released;
-          movieRating = response.results[i].imdbrating;
-          movieId = response.results[i].imdbid;
+          movieName = response.results[randomNums[i]].title;
+          movieSynopsis = response.results[randomNums[i]].synopsis;
+          movieImage = response.results[randomNums[i]].imageurl;
+          releaseDate = response.results[randomNums[i]].released;
+          movieRating = response.results[randomNums[i]].imdbrating;
+          movieId = response.results[randomNums[i]].imdbid;
           console.log(movieImage);
           var movieCard = $("<div>")
             .addClass("card text-center mb-4")
