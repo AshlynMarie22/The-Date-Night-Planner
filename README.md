@@ -48,6 +48,11 @@ On the final page, under the heading "its a date" the user can view their select
 Members of our team include Rayshawn Bray, Erin Crocker, Calvin Griffin, and Ashlyn Smith. Our team accomplished this using HTML, CSS, JavaScript and Jquery, as well as TheMealDB api, TheCocktailDB api, and OTT Details api.
 
 ## Contact
+Rayshawn Bray
+Email: raybray219@yahoo.com
+LinkedIn: www.linkedin.com/in/rayshawnbray
+Portfolio: https://2coldray.github.io/portfolio-update/
+
 Erin Crocker
 Email: erinleecrocker@gmail.com
 LinkedIn: https://www.linkedin.com/mwlite/in/erinleecrocker
@@ -57,6 +62,11 @@ Calvin Griffin
 Email: cgriffin332@gmail.com
 LinkedIn: https://www.linkedin.com/in/calvin-griffin-8247521b7/
 Portfolio: https://cgriffin332.github.io/Updated-Portfolio332/
+
+Ashlyn Smith
+Email: ashlyn.marie.smith2@gmail.com
+LinkedIn: https://www.linkedin.com/in/ashlynmsmith2/
+Portfolio: https://ashlynmarie22.github.io/Ashlyn_Smith-s_Portfolio/
 
 ## License
 
