@@ -79,7 +79,9 @@ a:hover {
   color: #c10059;
   background-color: #96dd7c;
   font-size: 25px;
+  min-width: 400px;
 }
+
 .btn-circle.btn-xl {
   align-content: center;
   width: 175px;
@@ -92,6 +94,7 @@ a:hover {
   font-weight: bold;
   text-align: center;
   background-color: #ff0076;
+  margin-bottom: 75px;
 }
 .btn-long.btn-xl {
   align-content: center;
