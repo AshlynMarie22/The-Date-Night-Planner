@@ -63,16 +63,18 @@ $(document).ready(function () {
             .addClass("rounded float-left")
             .attr("src", movieImage)
             .attr("style", "width: 200px");
-          var cardDate = $("<p>").addClass("card-detail-text").text("Release Date: " + releaseDate);
+          var cardDate = $("<p>").addClass("card-detail-text").text("Year Released: " + releaseDate);
           var synopsis = $("<p>")
             .addClass("card-detail-text")
             .text("Plot: " + movieSynopsis);
+          var cardRating = $("<p>").addClass("card-detail-text").text("IMDb Rating: " + movieRating);
+          var cardId = $("<p>").addClass("card-detail-text").text("IMDb ID: " + movieId);
           var chooseButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseMovie")
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
-          cardBody.append(cardTitle, cardImage, cardDate, synopsis);
+          cardBody.append(cardTitle, cardImage, cardDate, cardRating, synopsis, movieId);
           //Append Button to footer
           cardFooter.append(chooseButton);
           //Append cardBody and card footer to movieCard
