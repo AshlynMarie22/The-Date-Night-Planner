@@ -41,10 +41,16 @@ $(document).ready(function () {
           var movieName = "";
           var movieSynopsis = "";
           var movieImage = "";
+          var releaseDate = "",
+          var movieRating = "";
+          var movieId = "";
           movieName = response.results[i].title;
           movieSynopsis = response.results[i].synopsis;
           movieImage = response.results[i].imageurl;
-          // console.log(movieImage);
+          releaseDate = response.results[i].released;
+          movieRating = response.results[i].imdbrating;
+          movieId = response.results[i].imdbid;
+          console.log(movieImage);
           var movieCard = $("<div>")
             .addClass("card text-center mb-4")
             .attr("style", "height: 400px;");
@@ -54,18 +60,19 @@ $(document).ready(function () {
           var cardTitle = $("<h6>").addClass("card-title").text(movieName);
           var cardFooter = $("<div>").addClass("card-footer sticky");
           var cardImage = $("<img>")
-            .addClass("rounded")
+            .addClass("rounded float-left")
             .attr("src", movieImage)
             .attr("style", "width: 200px");
+          var cardDate = $("<p>").addClass("card-detail-text").text("Release Date: " + releaseDate);
           var synopsis = $("<p>")
             .addClass("card-detail-text")
-            .text(movieSynopsis);
+            .text("Plot: " + movieSynopsis);
           var chooseButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseMovie")
             .text("Choose Movie");
           //Display to Page
           //Append title, image synopsis and choose button to card body
-          cardBody.append(cardTitle, cardImage, synopsis);
+          cardBody.append(cardTitle, cardImage, cardDate, synopsis);
           //Append Button to footer
           cardFooter.append(chooseButton);
           //Append cardBody and card footer to movieCard
