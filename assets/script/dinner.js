@@ -69,7 +69,7 @@ $(document).ready(function () {
             .text("Youtube Link");
           cardButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseDinner")
-            .text("Choose Meal");
+            .text("CHOOSE MEAL");
           cardRecipe.append(cardYoutube);
           cardBody.append(cardTitle, cardImage, cardRecipe);
           cardFooter.append(cardButton);
@@ -173,7 +173,7 @@ $(document).ready(function () {
             .text(drinkIngredients + drinkRecipe);
           cardButton = $("<button>")
             .addClass("btn btn-sm submit-button chooseDrink")
-            .text("Choose Drink");
+            .text("CHOOSE DRINK");
           //ammend elements to the HTML
           cardBody.append(cardTitle, cardImage, cardRecipe);
           cardFooter.append(cardButton)
