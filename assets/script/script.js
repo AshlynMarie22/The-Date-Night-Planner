@@ -1,14 +1,13 @@
-var movieDisplay = $("#view-movie-display");
-var selectionHistory = localStorage.getItem("selectionHistory");
-var choice = [];
-
 $(document).ready(function () {
   //Populate User's movie choice to final page
   $(".finalMovie").html(localStorage.getItem("movie"));
   //Event Listeners
 
+  //Creating function that will generate 5 random, high rated movies, based on the users genre choice
   function topMovies() {
+    //Variable that holds users choice
     var genreChoice = $("#movie-input-group").val();
+    //Settings that go into the ajax call
     var settings = {
       async: true,
       crossDomain: true,
@@ -19,7 +18,7 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "ott-details.p.rapidapi.com",
-        "x-rapidapi-key": "535cc297b8msh767718cbd1122a3p11b6d3jsnebb33a3becc6",
+        "x-rapidapi-key": "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
       },
     };
     $.ajax(settings).done(function (response) {
