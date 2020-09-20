@@ -85,7 +85,9 @@ $(document).ready(function () {
         var cardId = $("<p>")
           .addClass("card-detail-text")
           .text("View movie details: ");
-        var imdbLink = $("<a>").text("IMDB Link").attr({"href":"https://m.imdb.com/title/" + movieId, "target":"nw"});
+        var imdbLink = $("<a>")
+          .text("IMDB Link")
+          .attr({ href: "https://m.imdb.com/title/" + movieId, target: "nw" });
         cardId.append(imdbLink);
         var chooseButton = $("<button>")
           .addClass("btn btn-sm submit-button chooseMovie")
@@ -113,12 +115,27 @@ $(document).ready(function () {
 
   //Event Listeners
 
-  //Button that will generate random movies 
-  $("#generate-movie-button").on("click", function () {
+  //Button that will generate random movies
+  $("#generate-movie-button").on("click", function (event) {
+    event.preventDefault();
     //Empty Container
     $("#view-movie-display").empty();
     //Function Calls
-    topMovies();
+    if (
+      genreChoice === "Action" ||
+      genreChoice === "Adventure" ||
+      genreChoice === "Comedy" ||
+      genreChoice === "Fantasy" ||
+      genreChoice === "Horror" ||
+      genreChoice === "Family" ||
+      genreChoice === "Sci-Fi" ||
+      genreChoice === "Animation" ||
+      genreChoice === "Mystery" ||
+      genreChoice === "Romance" ||
+      genreChoice === "Thriller"
+    ) {
+      topMovies();
+    }
   });
 
   //Saves movie selection to local storage
