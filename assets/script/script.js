@@ -15,13 +15,13 @@ $(document).ready(function () {
       async: true,
       crossDomain: true,
       url:
-        "https://ott-details.p.rapidapi.com/advancedsearch?end_year=2020&start_year=2019&min_imdb=6&page=1&genre=" +
+        "https://ott-details.p.rapidapi.com/advancedsearch?end_year=2020&start_year=1960&min_imdb=8.5&page=1&genre=" +
         genreChoice +
         "&type=movie&language=english&sort=highestrated",
       method: "GET",
       headers: {
         "x-rapidapi-host": "ott-details.p.rapidapi.com",
-        "x-rapidapi-key": "51e195c5admsh789132d4252bb28p1f13fajsn58f45623a2aa",
+        "x-rapidapi-key": "535cc297b8msh767718cbd1122a3p11b6d3jsnebb33a3becc6",
       },
     };
     $.ajax(settings).done(function (response) {
@@ -35,13 +35,7 @@ $(document).ready(function () {
         }
       }
       for (var i = 0; i < 5; i++) {
-        console.log(response.results[i]);
-        console.log("Movie Title: " + response.results[randomNums[i]].title);
-        console.log(
-          "IMDB Rating: " + response.results[randomNums[i]].imdbrating
-        );
-        console.log("Synopsis: " + response.results[randomNums[i]].synopsis);
-        console.log("Image URL: " + response.results[randomNums[i]].imageurl);
+        
         //Create Elements and Add Content
         var movieName = "";
         var movieSynopsis = "";
@@ -51,7 +45,14 @@ $(document).ready(function () {
         var movieId = "";
         movieName = response.results[randomNums[i]].title;
         movieSynopsis = response.results[randomNums[i]].synopsis;
+        if (!movieSynopsis) {
+          movieSynopsis =
+            "This film must be truly fantastic because it has a great rating on IMDB. For one reason or another, OTT details api does not include a synopsis for this film, but I recommend you take a chance and give this movie a shot.";
+        }
         movieImage = response.results[randomNums[i]].imageurl;
+        if (!movieImage[0]) {
+          movieImage = "./assets/images/placeholder.jpg"
+        }
         releaseDate = response.results[randomNums[i]].released;
         movieRating = response.results[randomNums[i]].imdbrating;
         movieId = response.results[randomNums[i]].imdbid;
@@ -103,7 +104,6 @@ $(document).ready(function () {
     });
   }
   $("#generate-movie-button").on("click", function () {
-    console.log("I've been clicked");
     //Empty Container
     $("#view-movie-display").empty();
     //Function Calls
@@ -113,7 +113,6 @@ $(document).ready(function () {
   //Saves movie selection to local storage
   $(document).on("click", ".chooseMovie", function (event) {
     event.preventDefault();
-    console.log($(this).parent().parent().html());
     localStorage.setItem("movie", $(this).parent().parent().html());
     // empty dinner container
     $("#view-your-movies").empty();
