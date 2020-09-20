@@ -1,6 +1,6 @@
+//DOM variables
 var dinnerContainer = $("#dinnerContainer");
 var drinkContainer = $("#drinkContainer");
-
 var generateDinnerButton = $("#generateDinnerButton");
 
 $(document).ready(function () {
@@ -13,7 +13,7 @@ $(document).ready(function () {
     event.preventDefault();
     //clear out old cards
     clearCards();
-    //later set this to $("#foodChoice").val()
+    //empty array to store random numbers
     var randomNums = [];
     mealType = $("#foodChoice").val();
     var mealURL =
@@ -25,8 +25,6 @@ $(document).ready(function () {
     }).then(function (mealResponse) {
       //the length of possible meals
       var num = mealResponse.meals.length;
-      //empty array to store random numbers
-
       //create random array of 5 numbers
       while (randomNums.length < 5) {
         var newRandom = Math.floor(Math.random() * num);
@@ -48,6 +46,7 @@ $(document).ready(function () {
           url: recipeURL,
           method: "GET",
         }).then(function (response) {
+          //create dinner cards and append them to the page
           mealTitle = response.meals[0].strMeal;
           mealImage = response.meals[0].strMealThumb;
           mealRecipe = response.meals[0].strInstructions;
@@ -55,7 +54,9 @@ $(document).ready(function () {
           dinnerCard = $("<div>")
             .addClass("card text-center mb-4")
             .attr("style", "height: 400px");
-          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardBody = $("<div>")
+            .addClass("card-body")
+            .attr("style", "overflow: scroll");
           cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(mealTitle);
           cardImage = $("<img>")
@@ -78,8 +79,6 @@ $(document).ready(function () {
       }
     });
     // code to determine drink option
-    // later set "choice" to $("#foodChoice").val()
-
     if (mealType === "Beef") {
       drink = "Scotch";
     } else if (mealType === "Seafood") {
@@ -93,12 +92,11 @@ $(document).ready(function () {
     } else {
       drink = "Tequila";
     }
-
     //drink ajax call
     // var drink = "Bourbon";
     var drinkURL =
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink;
-    // ajax call to get 5 meals based on mealType
+    // ajax call to get 5 drinks based on mealType
     $.ajax({
       url: drinkURL,
       method: "GET",
@@ -129,7 +127,7 @@ $(document).ready(function () {
           drinkTitle = response.drinks[0].strDrink;
           drinkImage = response.drinks[0].strDrinkThumb;
           drinkRecipe = response.drinks[0].strInstructions;
-          //iterate through possible ingredient properties of drink object
+          //iterate through possible ingredient properties of drink object.
           drinkIngredients = "Ingredients: ";
           if (response.drinks[0].strIngredient1) {
             drinkIngredients += response.drinks[0].strIngredient1 + ", ";
@@ -155,11 +153,13 @@ $(document).ready(function () {
           if (response.drinks[0].strIngredient8) {
             drinkIngredients += response.drinks[0].strIngredient8 + ", ";
           }
-          //create DOM elements
+          //create drink card elements
           drinkCard = $("<div>")
             .addClass("card text-center mb-4")
             .attr("style", "height: 400px");
-          cardBody = $("<div>").addClass("card-body").attr("style","overflow: scroll");
+          cardBody = $("<div>")
+            .addClass("card-body")
+            .attr("style", "overflow: scroll");
           cardFooter = $("<div>").addClass("card-footer sticky");
           cardTitle = $("<h6>").text(drinkTitle);
           cardImage = $("<img>")
@@ -174,41 +174,43 @@ $(document).ready(function () {
             .text("CHOOSE DRINK");
           //ammend elements to the HTML
           cardBody.append(cardTitle, cardImage, cardRecipe);
-          cardFooter.append(cardButton)
+          cardFooter.append(cardButton);
           drinkCard.append(cardBody, cardFooter);
           drinkContainer.append(drinkCard);
         });
       }
     });
   });
-  $('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
   //clear out dinner and drink choices
   var clearCards = function () {
     drinkContainer.empty();
     dinnerContainer.empty();
+    //append h5 to the page
     drinkContainer.append($("<h5>").text(" VIEW YOUR DRINK MENU:"));
     dinnerContainer.append($("<h5>").text(" VIEW YOUR DINNER MENU:"));
   };
   // Event Listeners
   $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
-    // console.log($(this).parent().parent().html())
+    //save whole card to local storage
     localStorage.setItem("Dinner", $(this).parent().parent().html());
     // empty dinner container
     dinnerContainer.empty();
     //show h5
-    dinnerContainer.append($("<h5>").text("Thank you for submitting your dinner option!"));
+    dinnerContainer.append(
+      $("<h5>").text("Thank you for submitting your dinner option!")
+    );
   });
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
-    // console.log($(this).parent().parent().html())
+    //save whole card to local storage
     localStorage.setItem("Drink", $(this).parent().parent().html());
     // empty dinner container
     drinkContainer.empty();
     //show h5
-    drinkContainer.append($("<h5>").text("Thank you for submitting your drink option!"));
+    drinkContainer.append(
+      $("<h5>").text("Thank you for submitting your drink option!")
+    );
   });
   // button to move user to dinner page
   $("#titleButton").on("click", function (event) {
