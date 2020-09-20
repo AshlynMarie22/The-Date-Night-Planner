@@ -77,7 +77,9 @@ $(document).ready(function () {
           .text("IMDb Rating: " + movieRating);
         var cardId = $("<p>")
           .addClass("card-detail-text")
-          .text("IMDb ID: " + movieId);
+          .text("View movie details: ");
+        var imdbLink = $("<a>").text("IMDB Link").attr({"href":"https://m.imdb.com/title/" + movieId, "target":"nw"});
+        cardId.append(imdbLink);
         var chooseButton = $("<button>")
           .addClass("btn btn-sm submit-button chooseMovie")
           .text("CHOOSE MOVIE");
