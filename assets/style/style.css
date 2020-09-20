@@ -83,6 +83,7 @@ a:hover {
 }
 
 .btn-circle.btn-xl {
+  
   align-content: center;
   width: 175px;
   height: 175px;
@@ -163,15 +164,18 @@ a:hover {
   margin-bottom: 30px;
 }
 .box {
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
-  border: dashed;
-  border-width: 6px;
+  border: dotted;
+  border-width: 5px;
   outline-color: #ff0076;
   color: #c10059;
   background-color: #96dd7c;
-  font-size: 20px;
+  font-size: 18px;
 }
 hr {
   width: 100%;
@@ -211,10 +215,16 @@ hr {
 .hide {
   display: none;
 }
-.drop-down-list a:hover {
-  background-image: none;
-  background-color: #96dd7c;
+.form-control:focus {
+  border-color: #c10059;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #c10059;
 }
+
+.form-control :active {
+  color: #c10059;
+}
+
+
 /* .navbar-toggler-icon{
         background-color: white;
     } */

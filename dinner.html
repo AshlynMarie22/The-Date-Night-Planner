@@ -46,24 +46,22 @@
     </nav>
     <div class="white-bar"></div>
     <!--- dinner page main area -->
-    <!-- <h1>Dinner Page</h1> -->
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-6">
           <!--- HARD CODED where the box with choose food catagory will go -->
           <div class="box">
-            <!-- <p> choose food catagory: </p> -->
-            <div class="input-group drop-down-list">
-              <select class="custom-select" id="foodChoice">
+            <!-- dropdown list for user to choose food catagory-->
+            <div class="input-group form-group">
+            <select class="custom-select form-control" id="foodChoice">
                 <option selected>Choose food category:</option>
                 <option value="Beef">Beef</option>
                 <option value="Chicken">Chicken</option>
                 <option value="Lamb">Lamb</option>
                 <option value="Pork">Pork</option>
                 <option value="Seafood">Seafood</option>
-                <!-- <option value="Goat">Goat</option> -->
                 <option value="Vegetarian">Vegetarian</option>
-              </select>
+            </select>
             </div>
           </div>
         </div>
@@ -71,9 +69,8 @@
           <!--- HARD CODED where the generate dinner button will go -->
           <button
             class="btn btn-secondary btn-circle btn-xl center"
-            id="generateDinnerButton"
-          >
-            GENERATE <br />DINNERS
+            id="generateDinnerButton" 
+            > GENERATE <br/> DINNERS
           </button>
         </div>
       </div>
