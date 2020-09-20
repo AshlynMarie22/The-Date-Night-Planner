@@ -5,6 +5,7 @@
 body {
   background-color: #33bc00;
 }
+/* Headers */
 h1 {
   color: white;
 }
@@ -44,6 +45,7 @@ a {
   padding-left: 2px;
   padding-right: 3px;
 }
+/* Navigation Bar */
 .navbar {
   background-color: #c10059;
   color: white;
@@ -81,9 +83,8 @@ a:hover {
   font-size: 25px;
   min-width: 401px;
 }
-
+/* Large circle button */
 .btn-circle.btn-xl {
-  
   align-content: center;
   width: 175px;
   height: 175px;
@@ -97,6 +98,7 @@ a:hover {
   background-color: #ff0076;
   margin-bottom: 75px;
 }
+/* Button with rounded edges */
 .btn-long.btn-xl {
   width: 200px;
   height: 50px;
@@ -139,6 +141,7 @@ a:hover {
   color: white;
   background-color: #ff0076;
 }
+/* Style element for top of final page box */
 .btn-bump.btn-xl {
   cursor: not-allowed;
   pointer-events: none;
@@ -177,6 +180,7 @@ a:hover {
   background-color: #96dd7c;
   font-size: 18px;
 }
+/* Dividing line inside box */
 hr {
   width: 100%;
   height: 1px;
@@ -223,8 +227,3 @@ hr {
 .form-control :active {
   color: #c10059;
 }
-
-
-/* .navbar-toggler-icon{
-        background-color: white;
-    } */
