@@ -1,3 +1,6 @@
+//Make movie Display Variable to display movie cards on screen
+var movieDisplay = $("#view-movie-display");
+
 $(document).ready(function () {
   //Populate User's movie choice to final page
   $(".finalMovie").html(localStorage.getItem("movie"));
