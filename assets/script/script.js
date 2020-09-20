@@ -1,7 +1,6 @@
 $(document).ready(function () {
   //Populate User's movie choice to final page
   $(".finalMovie").html(localStorage.getItem("movie"));
-  //Event Listeners
 
   //Creating function that will generate 5 random, high rated movies, based on the users genre choice
   function topMovies() {
@@ -21,6 +20,7 @@ $(document).ready(function () {
         "x-rapidapi-key": "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
       },
     };
+    //Ajax Call
     $.ajax(settings).done(function (response) {
       //Generate random number
       var randomNums = [];
@@ -107,6 +107,10 @@ $(document).ready(function () {
       }
     });
   }
+
+  //Event Listeners
+
+  //Button that will generate random movies 
   $("#generate-movie-button").on("click", function () {
     //Empty Container
     $("#view-movie-display").empty();
