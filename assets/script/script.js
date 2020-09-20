@@ -33,7 +33,6 @@ $(document).ready(function () {
         }
       }
       for (var i = 0; i < 5; i++) {
-        
         //Create Elements and Add Content
         var movieName = "";
         var movieSynopsis = "";
@@ -49,7 +48,7 @@ $(document).ready(function () {
         }
         movieImage = response.results[randomNums[i]].imageurl;
         if (!movieImage[0]) {
-          movieImage = "./assets/images/placeholder.jpg"
+          movieImage = "./assets/images/placeholder.jpg";
         }
         releaseDate = response.results[randomNums[i]].released;
         movieRating = response.results[randomNums[i]].imdbrating;
