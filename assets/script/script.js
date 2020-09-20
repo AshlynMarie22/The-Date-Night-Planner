@@ -3,14 +3,12 @@ var selectionHistory = localStorage.getItem("selectionHistory");
 var choice = [];
 
 $(document).ready(function () {
-  console.log("Hello World");
   //Populate User's movie choice to final page
   $(".finalMovie").html(localStorage.getItem("movie"));
   //Event Listeners
 
   function topMovies() {
     var genreChoice = $("#movie-input-group").val();
-    console.log("Double select: " + genreChoice);
     var settings = {
       async: true,
       crossDomain: true,
