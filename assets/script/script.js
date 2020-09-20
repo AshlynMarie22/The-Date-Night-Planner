@@ -1,14 +1,15 @@
+//Make movie Display Variable to display movie cards on screen
 var movieDisplay = $("#view-movie-display");
-var selectionHistory = localStorage.getItem("selectionHistory");
-var choice = [];
 
 $(document).ready(function () {
   //Populate User's movie choice to final page
   $(".finalMovie").html(localStorage.getItem("movie"));
-  //Event Listeners
 
+  //Creating function that will generate 5 random, high rated movies, based on the users genre choice
   function topMovies() {
+    //Variable that holds users choice
     var genreChoice = $("#movie-input-group").val();
+    //Settings that go into the ajax call
     var settings = {
       async: true,
       crossDomain: true,
@@ -19,9 +20,10 @@ $(document).ready(function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "ott-details.p.rapidapi.com",
-        "x-rapidapi-key": "535cc297b8msh767718cbd1122a3p11b6d3jsnebb33a3becc6",
+        "x-rapidapi-key": "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
       },
     };
+    //Ajax Call
     $.ajax(settings).done(function (response) {
       //Generate random number
       var randomNums = [];
@@ -34,18 +36,23 @@ $(document).ready(function () {
       }
       for (var i = 0; i < 5; i++) {
         //Create Elements and Add Content
+
+        //Variables that will hold content to dispaly on page
         var movieName = "";
         var movieSynopsis = "";
         var movieImage = "";
         var releaseDate = "";
         var movieRating = "";
         var movieId = "";
+        //Adding ajax response to variables
         movieName = response.results[randomNums[i]].title;
         movieSynopsis = response.results[randomNums[i]].synopsis;
+        //If movie synopsis is blank, display this message instead
         if (!movieSynopsis) {
           movieSynopsis =
             "This film must be truly fantastic because it has a great rating on IMDB. For one reason or another, OTT details api does not include a synopsis for this film, but I recommend you take a chance and give this movie a shot.";
         }
+        //If movie image is blank, display placeholder image
         movieImage = response.results[randomNums[i]].imageurl;
         if (!movieImage[0]) {
           movieImage = "./assets/images/placeholder.jpg";
@@ -53,7 +60,7 @@ $(document).ready(function () {
         releaseDate = response.results[randomNums[i]].released;
         movieRating = response.results[randomNums[i]].imdbrating;
         movieId = response.results[randomNums[i]].imdbid;
-        console.log(movieImage);
+        //Making elements that will appear on the DOM
         var movieCard = $("<div>")
           .addClass("card text-center mb-4")
           .attr("style", "height: 400px;");
@@ -83,7 +90,8 @@ $(document).ready(function () {
         var chooseButton = $("<button>")
           .addClass("btn btn-sm submit-button chooseMovie")
           .text("CHOOSE MOVIE");
-        //Display to Page
+        //Display to Elements on the DOM
+
         //Append title, image synopsis and choose button to card body
         cardBody.append(
           cardTitle,
@@ -102,6 +110,10 @@ $(document).ready(function () {
       }
     });
   }
+
+  //Event Listeners
+
+  //Button that will generate random movies 
   $("#generate-movie-button").on("click", function () {
     //Empty Container
     $("#view-movie-display").empty();
