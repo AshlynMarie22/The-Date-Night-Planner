@@ -16,7 +16,6 @@ $(document).ready(function () {
     //later set this to $("#foodChoice").val()
     var randomNums = [];
     mealType = $("#foodChoice").val();
-    console.log(mealType);
     var mealURL =
       "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + mealType;
     // ajax call to get 5 meals based on mealType
@@ -118,7 +117,6 @@ $(document).ready(function () {
       //generate 5 different drink id's
       for (var i = 0; i < 5; i++) {
         var drinkId = drinkResponse.drinks[randomNums2[i]].idDrink;
-        console.log(drinkId);
         //use the drink id's to generate info for 5 different cocktails url's
         drinkInfoURL =
           "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkId;
