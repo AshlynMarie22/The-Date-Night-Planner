@@ -97,7 +97,20 @@ a:hover {
   margin-bottom: 75px;
 }
 .btn-long.btn-xl {
-  align-content: center; 
+ 
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border-radius: 40px;
+  border-color: #c10059;
+  border-width: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ff0076;
+}
+#returnButton {
   width: 200px;
   height: 50px;
   margin-top: 20px;
