@@ -22,7 +22,7 @@ $(document).ready(function () {
         headers: {
           "x-rapidapi-host": "ott-details.p.rapidapi.com",
           "x-rapidapi-key":
-            "18270a6435mshc7de6892f83a3d1p10f31ejsn44394324a00e",
+            "649c5bfd53mshea280b0433863b5p14db3bjsn9873b216f8d5",
         },
       };
       //Ajax Call
