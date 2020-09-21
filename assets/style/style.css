@@ -72,16 +72,19 @@ a:hover {
   width: 100%;
   height: 10px;
 }
+/* Index.html Box */
 .box.col-sm {
   margin-top: 100px;
   margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
   border: dotted;
   border-width: 5px;
   border-color: #ff0076;
   color: #c10059;
   background-color: #96dd7c;
   font-size: 25px;
-  min-width: 401px;
+  min-width: 380px;
 }
 /* Large circle button */
 .btn-circle.btn-xl {
@@ -173,6 +176,8 @@ a:hover {
   padding-right: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   border: dotted;
   border-width: 5px;
   outline-color: #ff0076;
@@ -203,6 +208,8 @@ hr {
   width: 500px;
   min-height: 200px;
   padding: 10px 16px;
+  margin-left: 5px;
+  margin-right: 5px;
   border: solid;
   border-color: #ff0076;
   border-width: 12px;
