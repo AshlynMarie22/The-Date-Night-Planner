@@ -1,4 +1,5 @@
 //DOM variables
+
 var dinnerContainer = $("#dinnerContainer");
 var drinkContainer = $("#drinkContainer");
 var generateDinnerButton = $("#generateDinnerButton");
@@ -8,11 +9,11 @@ $(document).ready(function () {
   $(".finalDinner").html(localStorage.getItem("Dinner"));
   $(".finalDrink").html(localStorage.getItem("Drink"));
   // different meal categories: Beef, Chicken, Lamb, Pork, Seafood, Goat, Vegetarian
-  //click event
-  generateDinnerButton.on("click", function (event) {
-    event.preventDefault();
-    //clear out old cards
-    clearCards();
+
+  //Function definitions
+
+  //generate food and drink choices
+  var populateFoodAndDrink = function () {
     //empty array to store random numbers
     var randomNums = [];
     mealType = $("#foodChoice").val();
@@ -183,7 +184,7 @@ $(document).ready(function () {
         }
       });
     }
-  });
+  };
   //clear out dinner and drink choices
   var clearCards = function () {
     drinkContainer.empty();
@@ -192,7 +193,18 @@ $(document).ready(function () {
     drinkContainer.append($("<h5>").text(" VIEW YOUR DRINK MENU:"));
     dinnerContainer.append($("<h5>").text(" VIEW YOUR DINNER MENU:"));
   };
-  // Event Listeners
+
+  //Event Listeners
+
+  //Clock event to generate food and drink
+  generateDinnerButton.on("click", function (event) {
+    event.preventDefault();
+    //clear out old cards
+    clearCards();
+    //populate food and drink
+    populateFoodAndDrink();
+  });
+  //save dinners, remove choices, and say thank you
   $(document).on("click", ".chooseDinner", function (event) {
     event.preventDefault();
     //save whole card to local storage
@@ -204,6 +216,7 @@ $(document).ready(function () {
       $("<h5>").text("Thank you for submitting your dinner option!")
     );
   });
+  //save drinkss, remove choices, and say thank you
   $(document).on("click", ".chooseDrink", function (event) {
     event.preventDefault();
     //save whole card to local storage
@@ -216,19 +229,19 @@ $(document).ready(function () {
     );
   });
   // button to move user to dinner page
-  $("#titleButton").on("click", function (event) {
+  $("#titleButton").on("click", function () {
     window.location.href = "./dinner.html";
   });
   // button to move user to movie page
-  $("#submitDinner").on("click", function (event) {
+  $("#submitDinner").on("click", function () {
     window.location.href = "./movie.html";
   });
   // button to move user to final page
-  $("#submitMovie").on("click", function (event) {
+  $("#submitMovie").on("click", function () {
     window.location.href = "./final.html";
   });
   // button to move user to starting page
-  $("#returnButton").on("click", function (event) {
+  $("#returnButton").on("click", function () {
     window.location.href = "./index.html";
   });
 });
