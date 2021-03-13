@@ -1,6 +1,5 @@
-<!DOCTYPE html> <!--[if gt IE 8]><!-->
+<!DOCTYPE html> 
 <html class="no-js">
-  <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,9 +12,11 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link rel="stylesheet" href="./assets/style/final.css" />
   </head>
   <body>
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-md navbar-custom">
       <a class="navbar-brand" href="./index.html">THE DATE NIGHT PLANNER</a>
       <button
@@ -43,8 +44,8 @@
         </ul>
       </div>
     </nav>
+    <!-- White desgin element -->
     <div class="white-bar"></div>
-
     <div class="container">
       <div class="row">
         <div class="col-sm-1"></div>
@@ -53,11 +54,11 @@
             id="titleButton"
             type="button"
             class="btn btn-secondary btn-bump btn-xl"
-            disabled
           ></button>
         </div>
         <div class="col-sm-1"></div>
       </div>
+      <!-- Box for final selections -->
       <div class="row">
         <div class="col-sm-1"></div>
         <div class="final-box col-sm-10">
@@ -65,83 +66,44 @@
           <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 flex-column center">
-              <div class="card text-center">
-                <div class="card-body">
-                  <h6>Recipie Name</h6>
-                  <img
-                    src="http://www.fillmurray.com/200/200"
-                    class="rounded float-left"
-                    alt="..."
-                  />
-                  <p class="card-detail-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                </div>
-              </div>
+              <div class="card text-center finalDinner"></div>
             </div>
           </div>
-          <br>
+          <br />
           <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-6 flex-column center" >
-              <div class="card text-center">
-                <div class="card-body">
-                  <h6 class="card-title">Cocktail Name</h6>
-                  <img
-                    src="http://www.fillmurray.com/200/200"
-                    class="rounded float-left"
-                    alt="..."
-                  />
-                  <p class="card-detail-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-
-                </div>
-              </div>
+            <div class="col-sm-6 flex-column center">
+              <div class="card text-center finalDrink"></div>
             </div>
           </div>
-          <br>
+          <br />
           <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-6 flex-column center" >
-              <div class="card text-center">
-                <div class="card-body">
-                  <h6 class="card-title">Movie Card Placeholder</h6>
-                  <img
-                    src="http://www.fillmurray.com/200/200"
-                    class="rounded float-left"
-                    alt="..."
-                  />
-                  <p class="card-detail-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-
-                </div>
-              </div>
+            <div class="col-sm-6 flex-column center">
+              <div class="card text-center finalMovie"></div>
             </div>
+            <br />
           </div>
-          <br>
+          <div class="col-sm-1"></div>
         </div>
-        <div class="col-sm-1"></div>
       </div>
       <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="center col-sm-10">
+        <div class="col-5"></div>
+        <!-- Button to make a new date. -->
+        <div class="center col-2">
           <button
-            id="titleButton"
+            id="returnButton"
             type="button"
             class="btn btn-secondary btn-long btn-xl"
           >
-            <a href="#" class=""></a> MAKE A NEW DATE!
+            MAKE A NEW DATE!
           </button>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-5"></div>
       </div>
     </div>
     <div></div>
+    <!-- Footer -->
     <div class="footer">
       <div class="white-bar"></div>
       <p></p>
@@ -161,7 +123,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/dinner.js" async defer></script>
-    <script src="./assets/script.js" async defer></script>
+    <script src="./assets/script/dinner.js" async defer></script>
+    <script src="./assets/script/script.js" async defer></script>
   </body>
 </html>
